@@ -1,0 +1,16 @@
+John Michael McDonagh;The Guard
+Joel and Ethan Coen;True Grit
+Quentin Tarantino;Pulp Fiction
+Steven Spielberg;E.T. The Extra-Terrestrial
+Alfonso Cuarón;Gravity
+Edgar Wright;Shaun of the Dead
+Joon-ho Bong;Snowpiercer
+Taika Waititi;What We Do In The Shadows
+Alfred Hitchcock;North by Northwest
+Francis Ford Coppola;The Godfather
+Sofia Coppola;Lost in Translation
+Terrence Malick;Badlands
+Ridley Scott;Blade Runner (The Final Cut)
+Martin Scorsese;Taxi Driver
+David Fincher;The Social Network
+Christopher Nolan;The Dark Knight
