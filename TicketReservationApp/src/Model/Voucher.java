@@ -3,7 +3,7 @@ package Model;
 import java.util.Date;
 
 public class Voucher {
-	
+	//Where is the voucher from? Payment foreign key needed (not null)
 	private double value;
 	private Date startDate;
 	private Date expiryDate;

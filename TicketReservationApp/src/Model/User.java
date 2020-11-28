@@ -3,7 +3,8 @@ package Model;
 public class User {
 	
 	private Ticket movieTicket;
-	
+	//Neither ticket nor voucher is particular to an user
+	//Ticket is referenced by payment instead, and payment references registered user optionally
 	private Voucher refundVoucher;
 	
 	

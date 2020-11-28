@@ -8,7 +8,7 @@ public class Theater {
 	private String theaterAddress;
 	
 	private ArrayList<Seat> seats;
-	
+	//Theater has many schedules
 	private Schedule schedule;
 
 	public String getTheaterName() {

@@ -1,7 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
-
+//Need a method to search movie by name at least
 public class MovieList {
 
 	

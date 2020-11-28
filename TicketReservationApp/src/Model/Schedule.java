@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Schedule {
-	
+	//Need search function
 	private Theater theater;
 	
 	private Movie movie;

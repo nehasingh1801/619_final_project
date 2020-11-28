@@ -1,5 +1,7 @@
 package Model;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
 public class Movie {
 	
 	private String movieName;

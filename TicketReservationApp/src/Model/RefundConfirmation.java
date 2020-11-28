@@ -1,7 +1,7 @@
 package Model;
 
 import java.util.Date;
-
+//Refund needs a payment receipt as foreign key (not null)
 public class RefundConfirmation {
 	
 	private Date refundDate;

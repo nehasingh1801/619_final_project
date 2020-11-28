@@ -15,7 +15,7 @@ public class RegisteredUser {
 	private int creditcardNumber;
 	
 	private Date registrationStartDate;
-	
+	//User does not need a foreign key refund
 	private RefundConfirmation refund;
 	
 	private double userFee;

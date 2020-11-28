@@ -1,7 +1,7 @@
 package Model;
 
 public class PaymentReceipt {
-	
+	//Needs a registered user as foreign key (null)
 	private int receiptId;
 	
 	private Ticket ticket;
