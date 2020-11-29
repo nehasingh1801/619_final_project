@@ -10,6 +10,12 @@ public class Theater {
 	private ArrayList<Seat> seats;
 	//Theater has many schedules
 	private Schedule schedule;
+	
+	public Theater(String theaterName, String theaterAddress) {
+		this.setTheaterName(theaterName);
+		this.setTheaterAddress(theaterAddress);
+		
+	}
 
 	public String getTheaterName() {
 		return theaterName;

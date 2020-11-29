@@ -1,0 +1,31 @@
+PVR;The Social Network;10:00:00
+PVR;The Social Network;13:30:00
+PVR;North by Northwest;13:00:00
+PVR;True Grit;16:30:00
+PVR;True Grit;19:30:00
+PVR;The Guard;19:00:00
+Mini Complex;Shaun of the Dead;16:30:00
+Mini Complex;Shaun of the Dead;10:30:00
+Mini Complex;Pulp Fiction;14.00.00
+Mini Complex;Pulp Fiction;18.00.00
+Mini Complex;Taxi Driver;11.00.00
+Mini Complex;Taxi Driver;15.00.00
+Mini Complex;Lost in Translation;18.30.00
+Mini Complex;Lost in Translation;16.30.00
+Mini Complex;The Dark Knight;10.00.00
+Mini Complex;The Dark Knight;13.00.00
+Mini Complex;The Dark Knight;15.00.00
+NorthHill Theater;The Godfather;12.00.00
+NorthHill Theater;The Godfather;16.00.00
+NorthHill Theater;North by Northwest;10.00.00
+NorthHill Theater;North by Northwest;15.00.00
+NorthHill Theater;What We Do In The Shadows;11.00.00
+NorthHill Theater;Snowpiercer;18.00.00
+Downtown Complex;The Social Network;10.00.00
+Downtown Complex;The Social Network;15.00.00
+Downtown Complex;Blade Runner (The Final Cut);12.00.00
+Downtown Complex;Blade Runner (The Final Cut);16.00.00
+Downtown Complex;Badlands;14.00.00
+Downtown Complex;Badlands;15.00.00
+
+

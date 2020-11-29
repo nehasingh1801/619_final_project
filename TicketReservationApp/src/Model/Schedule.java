@@ -13,6 +13,11 @@ public class Schedule {
 	
 	private ArrayList<SeatReservation> seatReservation;
 
+	public Schedule(Theater theater,Movie movie,Date showtime) {
+		this.movie = movie;
+		this.theater = theater;
+		this.showtime = showtime;
+	}
 	public Theater getTheater() {
 		return theater;
 	}
@@ -35,6 +40,14 @@ public class Schedule {
 
 	public void setSeatReservation(ArrayList<SeatReservation> seatReservation) {
 		this.seatReservation = seatReservation;
+	}
+
+	public Date getShowtime() {
+		return showtime;
+	}
+
+	public void setShowtime(Date showtime) {
+		this.showtime = showtime;
 	}
 
 }

@@ -1,11 +1,17 @@
 package Model;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+//import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 public class Movie {
 	
 	private String movieName;
 	private String movieDirector;
+	
+	public Movie(String movieName, String movieDirector) {
+		this.setMovieDirector(movieDirector);
+		this.setMovieName(movieName);
+	}
+	
 	
 	public String getMovieName() {
 		return movieName;
