@@ -2,6 +2,7 @@ package Model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -10,6 +11,10 @@ import java.util.Scanner;
 public class FileManager {
 	
 	private String filename;
+	
+	private Movie movie;
+	
+	private Theater theater
 
 	public String getFilename() {
 		return filename;
@@ -19,8 +24,10 @@ public class FileManager {
 		this.filename = filename;
 	}
 
-	public FileManager(String filename) {
+	public FileManager(String filename, Movie movie, Theater theater) {
 		this.filename = filename;
+		this.movie = movie;
+		this.theater = theater;
 	}
 	
 	
@@ -70,27 +77,28 @@ public class FileManager {
 		return theaterList;
 	}
 	
-//	public ArrayList<Schedule> readScheduleFile() {
-//		ArrayList<Schedule> schedule = new ArrayList<Schedule>();
-//		
-//
-//		try {
-//			File myObj = new File(filename);
-//			Scanner myReader = new Scanner(myObj);
-//			while (myReader.hasNextLine()) {
-//				String data = myReader.nextLine();
-//				String[] splitData = data.split(";",5);
-//				Schedule s = new Schedule(splitData[0], splitData[1], splitData[2]);
-//				schedule.add(s);
-//				
-//
-//			}
-//			myReader.close();
-//		} catch (FileNotFoundException e) {
-//			System.out.println("An error occurred.");
-//			e.printStackTrace();
-//		}
-//		return schedule;
-//	}
+	public ArrayList<Schedule> readScheduleFile() {
+		ArrayList<Schedule> schedule = new ArrayList<Schedule>();
+		
+
+		try {
+			File myObj = new File(filename);
+			Scanner myReader = new Scanner(myObj);
+			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				String[] splitData = data.split(";",5);
+				Schedule s = new Schedule(theater.setTheaterName(splitData[0]), movie.setMovieName(splitData[1]), sdf.parse(splitData[2]));
+				schedule.add(s);
+				
+
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		return schedule;
+	}
 	
 }
