@@ -14,7 +14,7 @@ public class FileManager {
 	
 	private Movie movie;
 	
-	private Theater theater
+	private Theater theater;
 
 	public String getFilename() {
 		return filename;
@@ -26,8 +26,8 @@ public class FileManager {
 
 	public FileManager(String filename, Movie movie, Theater theater) {
 		this.filename = filename;
-		this.movie = movie;
-		this.theater = theater;
+		this.setMovie(movie);
+		this.setTheater(theater);
 	}
 	
 	
@@ -77,28 +77,44 @@ public class FileManager {
 		return theaterList;
 	}
 	
-	public ArrayList<Schedule> readScheduleFile() {
-		ArrayList<Schedule> schedule = new ArrayList<Schedule>();
-		
+//	public ArrayList<Schedule> readScheduleFile() {
+//		ArrayList<Schedule> schedule = new ArrayList<Schedule>();
+//		
+//
+//		try {
+//			File myObj = new File(filename);
+//			Scanner myReader = new Scanner(myObj);
+//			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
+//			while (myReader.hasNextLine()) {
+//				String data = myReader.nextLine();
+//				String[] splitData = data.split(";",5);
+//				Schedule s = new Schedule();
+//				schedule.add(s);
+//				
+//
+//			}
+//			myReader.close();
+//		} catch (FileNotFoundException e) {
+//			System.out.println("An error occurred.");
+//			e.printStackTrace();
+//		}
+//		return schedule;
+//	}
 
-		try {
-			File myObj = new File(filename);
-			Scanner myReader = new Scanner(myObj);
-			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
-			while (myReader.hasNextLine()) {
-				String data = myReader.nextLine();
-				String[] splitData = data.split(";",5);
-				Schedule s = new Schedule(theater.setTheaterName(splitData[0]), movie.setMovieName(splitData[1]), sdf.parse(splitData[2]));
-				schedule.add(s);
-				
+	public Theater getTheater() {
+		return theater;
+	}
 
-			}
-			myReader.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-		return schedule;
+	public void setTheater(Theater theater) {
+		this.theater = theater;
+	}
+
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
 	}
 	
 }

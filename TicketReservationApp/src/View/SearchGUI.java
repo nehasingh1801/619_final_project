@@ -1,4 +1,4 @@
-package TicketReservationApp.src.View;
+package View;
 
 import javax.swing.*;
 
