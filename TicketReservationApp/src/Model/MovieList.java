@@ -11,6 +11,13 @@ public class MovieList {
 		return movie;
 	}
 
+	public Movie searchMovie(String movieName) {
+		for(Movie m : movie)
+			if(m.getMovieDirector().toLowerCase().contains(movieName.toLowerCase()))
+				return m;
+		return null;
+	}
+	
 	public void setMovie(ArrayList<Movie> movie) {
 		this.movie = movie;
 	}

@@ -13,5 +13,13 @@ public class TheaterList {
 	public void setTheaterList(ArrayList<Theater> theaterList) {
 		this.theaterList = theaterList;
 	}
+	
+	public Theater searchTheater(String theaterName) {
+		for(Theater t : theaterList) {
+			if(t.getTheaterName().toLowerCase().contains(theaterName.toLowerCase()))
+				return t;
+		}
+		return null;
+	}
 
 }

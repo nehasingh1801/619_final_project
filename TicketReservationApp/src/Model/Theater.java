@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Theater {
 
@@ -9,7 +10,7 @@ public class Theater {
 	
 	private ArrayList<Seat> seats;
 	//Theater has many schedules
-	private Schedule schedule;
+	private ArrayList<Schedule> schedule;
 	
 	public Theater(String theaterName, String theaterAddress) {
 		this.setTheaterName(theaterName);
@@ -17,6 +18,13 @@ public class Theater {
 		
 	}
 
+	public Seat searchSeat(int seatNum) {
+		for(Seat s : seats)
+			if(s.getSeatNumber() == seatNum)
+				return s;
+		return null;
+	}
+	
 	public String getTheaterName() {
 		return theaterName;
 	}
@@ -41,12 +49,17 @@ public class Theater {
 		this.seats = seats;
 	}
 
-	public Schedule getSchedule() {
+	public ArrayList<Schedule> getSchedule() {
 		return schedule;
 	}
 
-	public void setSchedule(Schedule schedule) {
+	public void setSchedule(ArrayList<Schedule> schedule) {
 		this.schedule = schedule;
 	}
+	
+	public void addSchedule(Movie movie, Date showTime) {
+		schedule.add(new Schedule(this, movie, showTime));
+	}
+	
 	
 }
