@@ -1,25 +1,30 @@
 package View;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class SearchGUI extends JFrame {
 
     // Variables declaration
-    private javax.swing.JComboBox<String> dateComboBox;
-    private javax.swing.JLabel dateLabel;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JComboBox<String> movieComboBox;
+
+    private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel movieLabel;
     private javax.swing.JLabel newTicketLabel;
-    private javax.swing.JTextField receiptNumField;
     private javax.swing.JLabel receiptNumLabel;
-    private javax.swing.JButton refundButton;
     private javax.swing.JLabel refundLabel;
-    private javax.swing.JComboBox<String> showtimeComboBox;
     private javax.swing.JLabel showtimeLabel;
-    private javax.swing.JComboBox<String> theaterComboBox;
     private javax.swing.JLabel theaterLabel;
+
+    private javax.swing.JComboBox<String> dateComboBox;
+    private javax.swing.JComboBox<String> movieComboBox;
+    private javax.swing.JComboBox<String> showtimeComboBox;
+    private javax.swing.JComboBox<String> theaterComboBox;
+
     private javax.swing.JButton viewSeatsButton;
+    private javax.swing.JButton refundButton;
+
+    private javax.swing.JTextField receiptNumField;
 
 
     public SearchGUI() {
@@ -172,6 +177,53 @@ public class SearchGUI extends JFrame {
         pack();
     }// </editor-fold>
 
+    public void addDateComboBoxListener(ActionListener listenForDateComboBox) {
+        dateComboBox.addActionListener(listenForDateComboBox);
+    }
+
+    public void addMovieComboBoxListener(ActionListener listenForMovieComboBox) {
+        movieComboBox.addActionListener(listenForMovieComboBox);
+    }
+
+    public void addTheaterComboBoxListener(ActionListener listenForTheaterComboBox) {
+        theaterComboBox.addActionListener(listenForTheaterComboBox);
+    }
+
+    public void addShowtimeComboBoxListener(ActionListener listenForShowtimeComboBox) {
+        showtimeComboBox.addActionListener(listenForShowtimeComboBox);
+    }
+
+    public void addViewSeatButtonActionListener(ActionListener listenForViewSeatButton) {
+        viewSeatsButton.addActionListener(listenForViewSeatButton);
+    }
+
+    public void addRefundButtonActionListener(ActionListener listenForRefundButton) {
+        refundButton.addActionListener(listenForRefundButton);
+    }
+
+    public String getReceiptNumber() {
+        return receiptNumField.getText();
+    }
+
+    public String getDateComboBoxItem() {
+        return (String) dateComboBox.getSelectedItem();
+    }
+
+    public String getMovieComboBoxItem() {
+        return (String) movieComboBox.getSelectedItem();
+    }
+
+    public String getTheaterComboBoxItem() {
+        return (String) theaterComboBox.getSelectedItem();
+    }
+
+    public String getShowtimeComboBoxItem() {
+        return (String) showtimeComboBox.getSelectedItem();
+    }
+
+    public void displayErrorMessage(String errorMessage) {
+        JOptionPane.showMessageDialog(this, errorMessage);
+    }
 
     public void displayGUI() {
         /* Set the Nimbus look and feel */

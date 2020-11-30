@@ -1,24 +1,27 @@
 package View;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class UserInfoGUI extends JFrame {
 
     // Variables declaration
     private javax.swing.JLabel addressLabel;
-    private javax.swing.JLabel cardNumLabel;
     private javax.swing.JLabel feeWarningLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel cardNumLabel;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel passwordLabel;
-    private javax.swing.JButton registerButton;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel usernameLabel;
+
+    private javax.swing.JTextField addressField;
+    private javax.swing.JTextField cardNumField;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JTextField passwordField;
+    private javax.swing.JTextField usernameField;
+
+    private javax.swing.JButton registerButton;
     // End of variables declaration
 
     public UserInfoGUI() {
@@ -41,11 +44,11 @@ public class UserInfoGUI extends JFrame {
         passwordLabel = new javax.swing.JLabel();
         addressLabel = new javax.swing.JLabel();
         cardNumLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
+        usernameField = new javax.swing.JTextField();
+        passwordField = new javax.swing.JTextField();
+        addressField = new javax.swing.JTextField();
+        cardNumField = new javax.swing.JTextField();
         feeWarningLabel = new javax.swing.JLabel();
         registerButton = new javax.swing.JButton();
 
@@ -85,7 +88,7 @@ public class UserInfoGUI extends JFrame {
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(cardNumLabel)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                                                                .addComponent(cardNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addComponent(nameLabel)
@@ -94,10 +97,10 @@ public class UserInfoGUI extends JFrame {
                                                                         .addComponent(addressLabel))
                                                                 .addGap(29, 29, 29)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                                                                        .addComponent(jTextField2)
-                                                                        .addComponent(jTextField3)
-                                                                        .addComponent(jTextField4)))))
+                                                                        .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                                                                        .addComponent(usernameField)
+                                                                        .addComponent(passwordField)
+                                                                        .addComponent(addressField)))))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(24, 24, 24)
                                                 .addComponent(feeWarningLabel))
@@ -117,23 +120,23 @@ public class UserInfoGUI extends JFrame {
                                 .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(nameLabel)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(usernameLabel)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(passwordLabel)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(addressLabel)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(cardNumLabel)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cardNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(feeWarningLabel)
                                 .addGap(18, 18, 18)
@@ -144,6 +147,37 @@ public class UserInfoGUI extends JFrame {
         pack();
     }// </editor-fold>
 
+    public void addRegisterButtonListener(ActionListener listenForRegisterButton) {
+        registerButton.addActionListener(listenForRegisterButton);
+    }
+
+    public String getAddressField() {
+        return addressField.getText();
+    }
+
+    public String getNameField() {
+        return nameField.getText();
+    }
+
+    public String getUsernameField() {
+        return usernameField.getText();
+    }
+
+    public String getPasswordField() {
+        return passwordField.getText();
+    }
+
+    public String getCardNumField() {
+        return cardNumField.getText();
+    }
+
+    public void displayErrorMessage(String errorMessage) {
+        JOptionPane.showMessageDialog(this, errorMessage);
+    }
+
+    public void displayRegistrationMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
 
     public void displayGUI() {
         /* Set the Nimbus look and feel */
