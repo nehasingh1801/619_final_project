@@ -61,6 +61,10 @@ public class Ticket {
 		return getSchedule().getShowtime().getTime();
 	}
 	
+	public void cancelTicket() {
+		
+	}
+	
 	@Override
 	public String toString() {
 		String temp = "";

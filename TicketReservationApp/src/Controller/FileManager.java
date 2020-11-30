@@ -1,20 +1,25 @@
-package Model;
+package Controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+
+import Model.Movie;
+import Model.Schedule;
+import Model.Theater;
 
 
 public class FileManager {
 	
 	private String filename;
 	
-	private Movie movie;
+//	private Movie movie;
 	
-	private Theater theater;
+//	private Theater theater;
 
 	public String getFilename() {
 		return filename;
@@ -24,10 +29,9 @@ public class FileManager {
 		this.filename = filename;
 	}
 
-	public FileManager(String filename, Movie movie, Theater theater) {
+	public FileManager(String filename) {
 		this.filename = filename;
-		this.setMovie(movie);
-		this.setTheater(theater);
+
 	}
 	
 	
@@ -77,44 +81,36 @@ public class FileManager {
 		return theaterList;
 	}
 	
-//	public ArrayList<Schedule> readScheduleFile() {
-//		ArrayList<Schedule> schedule = new ArrayList<Schedule>();
-//		
-//
-//		try {
-//			File myObj = new File(filename);
-//			Scanner myReader = new Scanner(myObj);
-//			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
-//			while (myReader.hasNextLine()) {
-//				String data = myReader.nextLine();
-//				String[] splitData = data.split(";",5);
-//				Schedule s = new Schedule();
-//				schedule.add(s);
-//				
-//
-//			}
-//			myReader.close();
-//		} catch (FileNotFoundException e) {
-//			System.out.println("An error occurred.");
-//			e.printStackTrace();
-//		}
-//		return schedule;
-//	}
+	public ArrayList<Schedule> readScheduleFile() {
+		ArrayList<Schedule> schedule = new ArrayList<Schedule>();
+		
 
-	public Theater getTheater() {
-		return theater;
+		try {
+			File myObj = new File(filename);
+			Scanner myReader = new Scanner(myObj);
+			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				String[] splitData = data.split(";",5);
+				Schedule s;
+				try {
+					s = new Schedule(new Theater(splitData[0], ""), new Movie(splitData[1],""), sdf.parse(splitData[2]));
+					schedule.add(s);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		return schedule;
 	}
 
-	public void setTheater(Theater theater) {
-		this.theater = theater;
-	}
-
-	public Movie getMovie() {
-		return movie;
-	}
-
-	public void setMovie(Movie movie) {
-		this.movie = movie;
-	}
 	
 }
