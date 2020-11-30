@@ -1,9 +1,11 @@
 package Model;
 
+import java.util.Date;
+
 public class Ticket {
 	
-	private Seat seatNum;
-	private Theater theaterLoc;
+	private Seat seat;
+	private Theater theater;
 	private Schedule schedule;
 	private double price;
 	private boolean ticketStatus;
@@ -12,22 +14,22 @@ public class Ticket {
 		
 	}
 	
-	public Seat getSeatNum() {
-		return seatNum;
+	public Seat getSeat() {
+		return seat;
 	}
-	public void setSeatNum(Seat seatNum) {
-		this.seatNum = seatNum;
+	public void setSeat(Seat seat) {
+		this.seat = seat;
 	}
-	public Theater getTheaterLoc() {
-		return theaterLoc;
+	public Theater getTheater() {
+		return theater;
 	}
-	public void setTheaterLoc(Theater theaterLoc) {
-		this.theaterLoc = theaterLoc;
+	public void setTheater(Theater theater) {
+		this.theater = theater;
 	}
-	public Schedule getShowtime() {
+	public Schedule getSchedule() {
 		return schedule;
 	}
-	public void setShowtime(Schedule showtime) {
+	public void setSchedule(Schedule showtime) {
 		this.schedule = showtime;
 	}
 	public double getPrice() {
@@ -41,6 +43,22 @@ public class Ticket {
 	}
 	public void setTicketStatus(boolean ticketStatus) {
 		this.ticketStatus = ticketStatus;
+	}
+	
+
+	public int getSeatNum() {
+		return getSeat().getSeatNumber();
+				
+	}
+	
+	public String getTheaterLocation() {
+		
+		return getTheater().getTheaterAddress();
+	}
+	
+	
+	public long getShowtime() {
+		return getSchedule().getShowtime().getTime();
 	}
 	
 	@Override
