@@ -10,15 +10,24 @@ public class RegisteredUser {
 	
 	private String username;
 	
-	private String passsword;
+	private String password;
 	
 	private int creditcardNumber;
 	
 	private Date registrationStartDate;
 	//User does not need a foreign key refund
 	private RefundConfirmation refund;
-	
+
 	private double userFee;
+
+	public RegisteredUser(String name, String username, String password, String address, int cardNum) {
+		setName(name);
+		setUsername(username);
+		setPassword(password);
+		setAddress(address);
+		setCreditcardNumber(cardNum);
+	}
+
 
 	public String getName() {
 		return name;
@@ -44,12 +53,12 @@ public class RegisteredUser {
 		this.username = username;
 	}
 
-	public String getPasssword() {
-		return passsword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPasssword(String passsword) {
-		this.passsword = passsword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public int getCreditcardNumber() {
