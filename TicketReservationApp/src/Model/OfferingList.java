@@ -89,6 +89,15 @@ public class OfferingList {
 		return schedule;
 
 	}
+	
+	public String[] listMovieNames(String name) {
+		String[] movieNames = new String[searchMovieList(name).size()];
+		for(int i = 0; i < movieNames.length; i++) {
+			movieNames[i] = searchMovieList(name).get(i).getMovieName();
+		}
+		
+		return movieNames;
+	}
 
 	public ArrayList<Schedule> searchSchedule(String movieName, String theaterName) {
 
