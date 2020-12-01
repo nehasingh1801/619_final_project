@@ -52,6 +52,7 @@ public class SearchGUI extends JFrame {
         receiptNumField = new javax.swing.JTextField();
         receiptNumLabel = new javax.swing.JLabel();
         refundButton = new javax.swing.JButton();
+        dmTheater = new javax.swing.DefaultComboBoxModel<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Purchase or Refund Ticket");
