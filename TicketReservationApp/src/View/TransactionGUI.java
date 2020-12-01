@@ -52,6 +52,7 @@ public class TransactionGUI extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Payment Information");
+        setResizable(false);
 
         titleLabel.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         titleLabel.setText("Enter Ticket Payment Information:");

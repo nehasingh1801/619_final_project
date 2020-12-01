@@ -58,6 +58,7 @@ public class SearchGUI extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Purchase or Refund Ticket");
+        setResizable(false);
 
         theaterLabel.setText("Theaters");
 
