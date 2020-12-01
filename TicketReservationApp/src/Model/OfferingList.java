@@ -52,6 +52,14 @@ public class OfferingList {
 	}
 
 
+	public String[] listTheaterNames() {
+		String[] theaterNames = new String[theaterList.getTheaterList().size()];
+		for (int i = 0; i<theaterNames.length; i++) {
+			theaterNames[i] = theaterList.getTheaterList().get(i).getTheaterName();
+		}
+
+		return theaterNames;
+	}
 	
 
 	public ArrayList<Schedule> searchMovieList(String theaterName) {

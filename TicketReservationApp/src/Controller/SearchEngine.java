@@ -3,6 +3,7 @@ package Controller;
 import View.*;
 import Model.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,20 +12,21 @@ public class SearchEngine {
     private SeatMapGUI seatMap;
     private SearchGUI searchView;
     private TransactionGUI transactionGUI;
-    private TheaterList theaterList;
+    //private TheaterList theaterList;
     private OfferingList offeringList;
 
     public SearchEngine(SeatMapGUI seatMap, SearchGUI searchView, TransactionGUI transactionGUI,
-                        TheaterList theaterList, OfferingList offeringList) {
+                        OfferingList offeringList) {
+
         this.seatMap = seatMap;
         this.searchView = searchView;
         this.transactionGUI = transactionGUI;
-        this.theaterList = theaterList;
+        //this.theaterList = theaterList;
         this.offeringList = offeringList;
 
         addSearchViewListeners();
         addSeatMapListeners();
-        searchView.addTheatersToComboBox(theaterList.listTheaterNames());
+        searchView.addTheatersToComboBox(offeringList.listTheaterNames());
 
     }
 
@@ -174,6 +176,7 @@ public class SearchEngine {
 
     class purchaseButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            seatMap.setState(Frame.ICONIFIED);
             transactionGUI.displayGUI();
         }
     }
@@ -188,19 +191,18 @@ public class SearchEngine {
         searchView.addRefundButtonActionListener(new refundButtonListener());
     }
 
+    class theaterComboBoxListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String theaterName = searchView.getTheaterComboBoxItem();
+            searchView.addMoviesToComboBox(offeringList.listMovieNames(theaterName));
+        }
+    }
+
     class movieComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String theaterName = searchView.getTheaterComboBoxItem();
             String movieName = searchView.getMovieComboBoxItem();
             searchView.addShowtimesToComboBox(offeringList.listSchedule(movieName, theaterName));
-        }
-    }
-
-    class theaterComboBoxListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            //searchView.addTheatersToComboBox(theaterList.listTheaterNames());
-            String theaterName = searchView.getTheaterComboBoxItem();
-            searchView.addMoviesToComboBox(offeringList.listMovieNames(theaterName));
         }
     }
 
@@ -212,7 +214,8 @@ public class SearchEngine {
 
     class viewSeatButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            searchView.setState(Frame.ICONIFIED);
+            seatMap.displayGUI();
         }
     }
 

@@ -38,12 +38,12 @@ public class TheaterList {
         }
     }
 
-    public String[] listTheaterNames() {
-		String[] theaterNames = new String[theaterList.size()];
-		for (int i = 0; i<theaterNames.length; i++) {
-			theaterNames[i] = theaterList.get(i).getTheaterName();
-		}
-
-		return theaterNames;
-	}
+//    public String[] listTheaterNames() {
+//		String[] theaterNames = new String[theaterList.size()];
+//		for (int i = 0; i<theaterNames.length; i++) {
+//			theaterNames[i] = theaterList.get(i).getTheaterName();
+//		}
+//
+//		return theaterNames;
+//	}
 }
