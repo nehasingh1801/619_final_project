@@ -21,6 +21,7 @@ public class SearchEngine {
 
         addSearchViewListeners();
         addSeatMapListeners();
+        searchView.addTheatersToComboBox(theaterList.listTheaterNames());
 
     }
 
@@ -191,7 +192,7 @@ public class SearchEngine {
 
     class theaterComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            searchView.addTheatersToComboBox(theaterList.listTheaterNames());
+            //searchView.addTheatersToComboBox(theaterList.listTheaterNames());
         }
     }
 

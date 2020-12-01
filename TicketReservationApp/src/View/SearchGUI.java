@@ -4,6 +4,7 @@ import Model.Theater;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 public class SearchGUI extends JFrame {
@@ -61,7 +62,7 @@ public class SearchGUI extends JFrame {
 
         showtimeLabel.setText("Showtime");
 
-        theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT THEATER", "THEATER 1", "THEATER 2", "THEATER 3" }));
+        //theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT THEATER", "THEATER 1", "THEATER 2", "THEATER 3" }));
 
         movieComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT MOVIE", "MOVIE 1", "MOVIE 2", "MOVIE 3" }));
 
