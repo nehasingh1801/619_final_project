@@ -14,14 +14,19 @@ public class ManageUser {
     private LoginGUI loginView;
     private UserInfoGUI userView;
     private SearchGUI searchGUI;
+    private MemberPortal memberPortal;
+    RegisteredUserList regList;
 
-    public ManageUser(LoginGUI loginView, UserInfoGUI userView, SearchGUI searchGUI) {
+    public ManageUser(LoginGUI loginView, UserInfoGUI userView, MemberPortal memberPortal, SearchGUI searchGUI, RegisteredUserList regList) {
         this.loginView = loginView;
         this.userView = userView;
+        this.memberPortal = memberPortal;
         this.searchGUI = searchGUI;
+        this.regList = regList;
 
         addUserViewListeners();
         addLoginViewListeners();
+        addMemberPortalListeners();
     }
 
     /*
@@ -40,8 +45,14 @@ public class ManageUser {
             }
             //TODO: verify login info and then display searchGUI as a registered user
             else {
-                loginView.setState(Frame.ICONIFIED);
-                searchGUI.displayGUI();
+                if (regList.validateLogin(loginView.getUserField(), loginView.getPasswordField())) {
+                    loginView.setState(Frame.ICONIFIED);
+                    memberPortal.displayGUI();
+                }
+
+                else {
+                    loginView.displayErrorMessage("Username or password incorrect");
+                }
             }
 
         }
@@ -82,11 +93,38 @@ public class ManageUser {
             else {
                 RegisteredUser regUser = new RegisteredUser(userView.getNameField(), userView.getUsernameField(),
                         userView.getPasswordField(), userView.getAddressField(),
-                        Integer.parseInt(userView.getCardNumField()), new Date());
+                        Long.parseLong(userView.getCardNumField()), new Date());
 
                 userView.displayRegistrationMessage("User successfully registered");
                 //TODO: add regUser to RegisteredUserList
+                regList.addRegisteredUser(regUser);
             }
+        }
+    }
+
+
+    private void addMemberPortalListeners() {
+        memberPortal.addBookShowtimeListener(new bookShowtimeListener());
+        memberPortal.addPayAnnualFeeListener(new payAnnualFeeListener());
+        memberPortal.addGetMovieNewsListener(new getMovieNewsListener());
+    }
+
+    class bookShowtimeListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            memberPortal.setState(Frame.ICONIFIED);
+            searchGUI.displayGUI();
+        }
+    }
+
+    class payAnnualFeeListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            memberPortal.displayMessage("Payment received. Thank you!");
+        }
+    }
+
+    class getMovieNewsListener implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            memberPortal.displayMessage("No movie news to display currently.");
         }
     }
 
