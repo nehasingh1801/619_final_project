@@ -1,30 +1,27 @@
 package View;
 
+import Model.Theater;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class SearchGUI extends JFrame {
 
     // Variables declaration
     private javax.swing.JSeparator jSeparator1;
-
-    private javax.swing.JLabel dateLabel;
+    private javax.swing.JComboBox<String> movieComboBox;
     private javax.swing.JLabel movieLabel;
     private javax.swing.JLabel newTicketLabel;
-    private javax.swing.JLabel receiptNumLabel;
-    private javax.swing.JLabel refundLabel;
-    private javax.swing.JLabel showtimeLabel;
-    private javax.swing.JLabel theaterLabel;
-
-    private javax.swing.JComboBox<String> dateComboBox;
-    private javax.swing.JComboBox<String> movieComboBox;
-    private javax.swing.JComboBox<String> showtimeComboBox;
-    private javax.swing.JComboBox<String> theaterComboBox;
-
-    private javax.swing.JButton viewSeatsButton;
-    private javax.swing.JButton refundButton;
-
     private javax.swing.JTextField receiptNumField;
+    private javax.swing.JLabel receiptNumLabel;
+    private javax.swing.JButton refundButton;
+    private javax.swing.JLabel refundLabel;
+    private javax.swing.JComboBox<String> showtimeComboBox;
+    private javax.swing.JLabel showtimeLabel;
+    private javax.swing.JComboBox<String> theaterComboBox;
+    private javax.swing.JLabel theaterLabel;
+    private javax.swing.JButton viewSeatsButton;
 
 
     public SearchGUI() {
@@ -42,11 +39,9 @@ public class SearchGUI extends JFrame {
 
         theaterLabel = new javax.swing.JLabel();
         movieLabel = new javax.swing.JLabel();
-        dateLabel = new javax.swing.JLabel();
         showtimeLabel = new javax.swing.JLabel();
         theaterComboBox = new javax.swing.JComboBox<>();
         movieComboBox = new javax.swing.JComboBox<>();
-        dateComboBox = new javax.swing.JComboBox<>();
         showtimeComboBox = new javax.swing.JComboBox<>();
         viewSeatsButton = new javax.swing.JButton();
         newTicketLabel = new javax.swing.JLabel();
@@ -64,15 +59,11 @@ public class SearchGUI extends JFrame {
 
         movieLabel.setText("Movie");
 
-        dateLabel.setText("Date");
-
         showtimeLabel.setText("Showtime");
 
         theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT THEATER", "THEATER 1", "THEATER 2", "THEATER 3" }));
 
         movieComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT MOVIE", "MOVIE 1", "MOVIE 2", "MOVIE 3" }));
-
-        dateComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT DATE" }));
 
         showtimeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT SHOWTIME", "10:00", "14:00", "18:00" }));
 
@@ -98,88 +89,83 @@ public class SearchGUI extends JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(38, 38, 38)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(theaterLabel)
-                                                        .addComponent(movieLabel)
-                                                        .addComponent(dateLabel)
-                                                        .addComponent(showtimeLabel))
-                                                .addGap(19, 19, 19)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(showtimeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(dateComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(movieComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(theaterComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(29, 29, 29))
-                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(showtimeLabel)
+                                                                .addGap(19, 19, 19)
+                                                                .addComponent(showtimeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(movieLabel)
+                                                                        .addComponent(theaterLabel))
+                                                                .addGap(26, 26, 26)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(movieComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(theaterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(newTicketLabel))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(newTicketLabel)
-                                                .addGap(98, 98, 98))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(56, 56, 56)
                                                 .addComponent(viewSeatsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                .addGap(81, 81, 81)))
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(receiptNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(receiptNumLabel)
-                                                .addGap(22, 22, 22))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addComponent(receiptNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(receiptNumLabel)
+                                                                .addGap(22, 22, 22))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addComponent(refundButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(55, 55, 55))))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(refundButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(72, 72, 72))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGap(91, 91, 91)
-                                                .addComponent(refundLabel)
-                                                .addContainerGap())))
+                                                .addGap(90, 90, 90)
+                                                .addComponent(refundLabel))))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jSeparator1)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jSeparator1)
-                                                .addContainerGap())
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                                 .addComponent(refundLabel)
                                                                 .addGap(42, 42, 42)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(receiptNumLabel)
                                                                         .addComponent(receiptNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(29, 29, 29)
+                                                                .addGap(28, 28, 28)
                                                                 .addComponent(refundButton))
-                                                        .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                                 .addComponent(newTicketLabel)
                                                                 .addGap(18, 18, 18)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(theaterLabel)
                                                                         .addComponent(theaterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(24, 24, 24)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(movieLabel)
                                                                         .addComponent(movieComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(18, 18, 18)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(dateLabel)
-                                                                        .addComponent(dateComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(25, 25, 25)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(showtimeLabel)
                                                                         .addComponent(showtimeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                                                .addComponent(viewSeatsButton)
-                                                .addGap(27, 27, 27))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                                .addComponent(viewSeatsButton)))
+                                .addGap(22, 22, 22))
         );
 
         pack();
     }// </editor-fold>
 
-    public void addDateComboBoxListener(ActionListener listenForDateComboBox) {
-        dateComboBox.addActionListener(listenForDateComboBox);
+
+    public void addTheatersToComboBox(String[] theaterList) {
+        theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(theaterList));
     }
 
     public void addMovieComboBoxListener(ActionListener listenForMovieComboBox) {
@@ -204,10 +190,6 @@ public class SearchGUI extends JFrame {
 
     public String getReceiptNumber() {
         return receiptNumField.getText();
-    }
-
-    public String getDateComboBoxItem() {
-        return (String) dateComboBox.getSelectedItem();
     }
 
     public String getMovieComboBoxItem() {
