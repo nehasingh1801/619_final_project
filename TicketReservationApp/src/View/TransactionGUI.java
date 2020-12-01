@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class TransactionGUI extends JFrame {
 
@@ -8,15 +9,18 @@ public class TransactionGUI extends JFrame {
     private javax.swing.JLabel addressLabel;
     private javax.swing.JLabel cardNumLabel;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel noteLabel;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel voucherLabel;
+
+    private javax.swing.JTextField addressField;
+    private javax.swing.JTextField cardNumField;
+    private javax.swing.JTextField emailField;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JTextField voucherNumField;
+
+    private javax.swing.JButton purchaseButton;
     // End of variables declaration
 
     public TransactionGUI() {
@@ -39,11 +43,12 @@ public class TransactionGUI extends JFrame {
         cardNumLabel = new javax.swing.JLabel();
         noteLabel = new javax.swing.JLabel();
         voucherLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
+        addressField = new javax.swing.JTextField();
+        cardNumField = new javax.swing.JTextField();
+        emailField = new javax.swing.JTextField();
+        voucherNumField = new javax.swing.JTextField();
+        purchaseButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Payment Information");
@@ -65,6 +70,8 @@ public class TransactionGUI extends JFrame {
 
         voucherLabel.setText("Voucher Number");
 
+        purchaseButton.setText("Confirm Purchase");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,28 +85,29 @@ public class TransactionGUI extends JFrame {
                                                                 .addGroup(layout.createSequentialGroup()
                                                                         .addComponent(voucherLabel)
                                                                         .addGap(18, 18, 18)
-                                                                        .addComponent(jTextField5))
-                                                                .addGroup(layout.createSequentialGroup()
-                                                                        .addComponent(cardNumLabel)
-                                                                        .addGap(185, 185, 185))
+                                                                        .addComponent(voucherNumField))
+                                                                .addComponent(cardNumLabel)
                                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                                         .addComponent(emailLabel)
                                                                         .addGap(18, 18, 18)
-                                                                        .addComponent(jTextField4))
+                                                                        .addComponent(emailField))
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(cardNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                         .addComponent(addressLabel)
                                                                                         .addComponent(nameLabel))
                                                                                 .addGap(37, 37, 37)
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                                                        .addComponent(nameField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(addressField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                                         .addComponent(noteLabel)))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(70, 70, 70)
-                                                .addComponent(titleLabel)))
+                                                .addComponent(titleLabel))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(113, 113, 113)
+                                                .addComponent(purchaseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,30 +118,64 @@ public class TransactionGUI extends JFrame {
                                 .addGap(26, 26, 26)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(nameLabel)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(addressLabel)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(cardNumLabel)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cardNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(emailLabel)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(voucherLabel)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                        .addComponent(voucherNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(purchaseButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                                 .addComponent(noteLabel)
                                 .addGap(33, 33, 33))
         );
 
         pack();
     }// </editor-fold>
+
+    public void addPurchaseButtonListener(ActionListener listenForPurchaseButton) {
+        purchaseButton.addActionListener(listenForPurchaseButton);
+    }
+
+    public String getNameField() {
+        return nameField.getText();
+    }
+
+    public String getAddress() {
+        return addressField.getText();
+    }
+
+    public String getEmail() {
+        return emailField.getText();
+    }
+
+    public String getCardNum() {
+        return cardNumField.getText();
+    }
+
+    public String getVoucherNum() {
+        return voucherNumField.getText();
+    }
+
+    public void displayErrorMessage(String errorMessage) {
+        JOptionPane.showMessageDialog(this, errorMessage);
+    }
+
+    public void displayConfirmation(String confirmationMessage) {
+        JOptionPane.showMessageDialog(this, confirmationMessage);
+    }
 
 
     public void displayGUI() {
