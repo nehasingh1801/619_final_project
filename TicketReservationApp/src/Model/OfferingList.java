@@ -61,8 +61,14 @@ public class OfferingList {
 
 			if (s.getTheaterName().equalsIgnoreCase(theaterName)) {
 				
+				if(schedule.contains(s)) {
+					continue;
+				}
+				else {
+					schedule.add(s);
+				}
 				
-				schedule.add(s);
+				
 			}
 
 		}
