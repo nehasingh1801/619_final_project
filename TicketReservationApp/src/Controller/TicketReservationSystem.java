@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import Model.*;
+import View.*;
+
 public class TicketReservationSystem {
 
 	private TheaterList theaterList;
@@ -88,6 +90,18 @@ public class TicketReservationSystem {
 			System.out.println(temp.get(i).getShowtime());
 		}
 //		ArrayList<Date> showtimelist= schedules.getSchedule(tempMov, tempTheater);
+
+		LoginGUI login = new LoginGUI();
+		SearchGUI search = new SearchGUI();
+		SeatMapGUI seats = new SeatMapGUI();
+		TransactionGUI trans = new TransactionGUI();
+		UserInfoGUI user = new UserInfoGUI();
+
+		ManagePurchase managePurchase = new ManagePurchase(trans);
+		ManageUser manageUser = new ManageUser(login, user, search);
+		SearchEngine searchEngine = new SearchEngine(seats, search, trans, theaterList);
+
+		login.displayGUI();
 		
 		
 		

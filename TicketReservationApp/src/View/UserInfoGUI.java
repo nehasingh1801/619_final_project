@@ -56,6 +56,7 @@ public class UserInfoGUI extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("User Registration");
+        setResizable(false);
 
         titleLabel.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         titleLabel.setText("User Registration Form");

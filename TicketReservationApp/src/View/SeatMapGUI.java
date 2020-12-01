@@ -68,6 +68,7 @@ public class SeatMapGUI extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seat Map");
+        setResizable(false);
 
         screenLabel.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         screenLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

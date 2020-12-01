@@ -24,7 +24,7 @@ public class TheaterList {
 		return null;
 	}
 
-	
+
 	public void loadTheaterRepo(String filename) {
 
 		FileManager fm = new FileManager(filename);
@@ -37,4 +37,13 @@ public class TheaterList {
             System.out.println("Theater: " + t);
         }
     }
+
+    public String[] listTheaterNames() {
+		String[] theaterNames = new String[theaterList.size()];
+		for (int i = 0; i<theaterNames.length; i++) {
+			theaterNames[i] = theaterList.get(i).getTheaterName();
+		}
+
+		return theaterNames;
+	}
 }

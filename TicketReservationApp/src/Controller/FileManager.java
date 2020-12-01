@@ -19,6 +19,7 @@ import Model.Theater;
 public class FileManager {
 	
 	private String filename;
+
 	
 //	private Movie movie;
 	
@@ -33,6 +34,7 @@ public class FileManager {
 
 	}
 
+
 	public String getFilename() {
 		return filename;
 	}
@@ -43,10 +45,15 @@ public class FileManager {
 
 	
 	
-	
+
+	public FileManager(String filename) {
+		this.filename = filename;
+
+	}
+
+
 	public ArrayList<Movie> readMovieFile() {
-		ArrayList<Movie> movieList = new ArrayList<Movie>();
-		
+	ArrayList<Movie> movieList = new ArrayList<Movie>();
 
 		try {
 			File myObj = new File(filename);
@@ -56,20 +63,20 @@ public class FileManager {
 				String[] splitData = data.split(";",2);
 				Movie i = new Movie(splitData[1],splitData[0]);
 				movieList.add(i);
-				
-
 			}
+
 			myReader.close();
+
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+
 		return movieList;
 	}
-	
+
 	public ArrayList<Theater> readTheaterFile() {
-		ArrayList<Theater> theaterList = new ArrayList<Theater>();
-		
+	ArrayList<Theater> theaterList = new ArrayList<Theater>();
 
 		try {
 			File myObj = new File(filename);
@@ -79,32 +86,30 @@ public class FileManager {
 				String[] splitData = data.split(";",2);
 				Theater t = new Theater(splitData[0], splitData[1]);
 				theaterList.add(t);
-				
-
 			}
+
 			myReader.close();
+
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+
 		return theaterList;
 	}
-	
+
 	public ArrayList<Schedule> readScheduleFile() {
-		ArrayList<Schedule> schedule = new ArrayList<Schedule>();
-		
+	ArrayList<Schedule> schedule = new ArrayList<Schedule>();
 
 		try {
 			File myObj = new File(filename);
 			Scanner myReader = new Scanner(myObj);
-			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
+			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
 				String[] splitData = data.split(";",3);
-//				System.out.println(splitData[0]+ " ,  " + splitData[1] + " , " + splitData[2]);
 				Schedule s;
 				try {
-//					s = new Schedule(new Theater(splitData[0], ""), new Movie(splitData[1],""), sdf.parse(splitData[2]));
 					s = new Schedule(splitData[0], splitData[1], sdf.parse(splitData[2]));
 					schedule.add(s);
 				} catch (ParseException e) {
