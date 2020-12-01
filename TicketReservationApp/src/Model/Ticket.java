@@ -70,11 +70,11 @@ public class Ticket {
 	public String toString() {
 		String temp = "";
 		
-		temp = temp + "Movie: " + schedule.getMovie().getMovieName()+ "\n" 
+		temp = temp + "Movie: " + schedule.getMovieName()+ "\n" 
 				+ "Show Date: " + schedule.getShowtime().getDate() + "\n"
 				+ "Show Time: " + schedule.getShowtime().getTime() + "\n"
-				+ "Theater name: " + schedule.getTheater().getTheaterName() + "\n"
-				+ "Theater address: " + schedule.getTheater().getTheaterAddress() + "\n";
+				+ "Theater name: " + schedule.getTheaterName() + "\n"
+				+ "Theater address: " + "\n";
 		return null;
 	}
 
