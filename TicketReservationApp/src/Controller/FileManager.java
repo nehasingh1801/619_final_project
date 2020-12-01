@@ -95,7 +95,8 @@ public class FileManager {
 //				System.out.println(splitData[0]+ " ,  " + splitData[1] + " , " + splitData[2]);
 				Schedule s;
 				try {
-					s = new Schedule(new Theater(splitData[0], ""), new Movie(splitData[1],""), sdf.parse(splitData[2]));
+//					s = new Schedule(new Theater(splitData[0], ""), new Movie(splitData[1],""), sdf.parse(splitData[2]));
+					s = new Schedule(splitData[0], splitData[1], sdf.parse(splitData[2]));
 					schedule.add(s);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block

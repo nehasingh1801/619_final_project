@@ -57,10 +57,10 @@ public class Theater {
 		this.schedule = schedule;
 	}
 	
-	public void addSchedule(Movie movie, Date showTime) {
-		schedule.add(new Schedule(this, movie, showTime));
-	}
-	
+//	public void addSchedule(Movie movie, Date showTime) {
+//		schedule.add(new Schedule(this, movie, showTime));
+//	}
+//	
 	@Override
 	public String toString() {
 
