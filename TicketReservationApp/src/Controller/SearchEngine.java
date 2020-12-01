@@ -12,12 +12,15 @@ public class SearchEngine {
     private SearchGUI searchView;
     private TransactionGUI transactionGUI;
     private TheaterList theaterList;
+    private OfferingList offeringList;
 
-    public SearchEngine(SeatMapGUI seatMap, SearchGUI searchView, TransactionGUI transactionGUI, TheaterList theaterList) {
+    public SearchEngine(SeatMapGUI seatMap, SearchGUI searchView, TransactionGUI transactionGUI,
+                        TheaterList theaterList, OfferingList offeringList) {
         this.seatMap = seatMap;
         this.searchView = searchView;
         this.transactionGUI = transactionGUI;
         this.theaterList = theaterList;
+        this.offeringList = offeringList;
 
         addSearchViewListeners();
         addSeatMapListeners();
@@ -193,6 +196,8 @@ public class SearchEngine {
     class theaterComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             //searchView.addTheatersToComboBox(theaterList.listTheaterNames());
+            String theaterName = searchView.getTheaterComboBoxItem();
+            searchView.addMoviesToComboBox(offeringList.listMovieNames(theaterName));
         }
     }
 
