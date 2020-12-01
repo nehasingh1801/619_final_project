@@ -43,13 +43,6 @@ public class FileManager {
 		this.filename = filename;
 	}
 
-	
-	
-
-	public FileManager(String filename) {
-		this.filename = filename;
-
-	}
 
 
 	public ArrayList<Movie> readMovieFile() {
