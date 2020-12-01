@@ -61,5 +61,11 @@ public class Theater {
 		schedule.add(new Schedule(this, movie, showTime));
 	}
 	
+	@Override
+	public String toString() {
+
+		return theaterName + ", Address: " + theaterAddress ;
+
+	}
 	
 }

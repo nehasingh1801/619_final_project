@@ -32,5 +32,12 @@ public class Movie {
 	public void printMovie() {
 		//code here
 	}
+	
+	@Override
+	public String toString() {
+
+		return movieName + ", Directro name: " + movieDirector ;
+
+	}
 
 }
