@@ -99,7 +99,7 @@ public class TicketReservationSystem {
 
 		ManagePurchase managePurchase = new ManagePurchase(trans);
 		ManageUser manageUser = new ManageUser(login, user, search);
-		SearchEngine searchEngine = new SearchEngine(seats, search, trans, theaterList);
+		SearchEngine searchEngine = new SearchEngine(seats, search, trans, theaterList, offeringList);
 
 		login.displayGUI();
 		
