@@ -61,7 +61,17 @@ public class OfferingList {
 
 			if (s.getTheaterName().equalsIgnoreCase(theaterName)) {
 				
-				schedule.add(s);
+//				System.out.println(schedule.contains(s));
+				
+				if(!schedule.contains(s)) {
+					System.out.println("not present");
+					schedule.add(s);
+					
+				}else {
+					
+				}
+				
+				
 				
 //				if(!schedule.contains(s.getMovieName())) {
 //					
