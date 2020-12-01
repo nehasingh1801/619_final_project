@@ -62,7 +62,7 @@ public class SearchGUI extends JFrame {
 
         showtimeLabel.setText("Showtime");
 
-        //theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT THEATER", "THEATER 1", "THEATER 2", "THEATER 3" }));
+        theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT THEATER" }));
 
         movieComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT MOVIE", "MOVIE 1", "MOVIE 2", "MOVIE 3" }));
 
@@ -167,6 +167,10 @@ public class SearchGUI extends JFrame {
 
     public void addTheatersToComboBox(String[] theaterList) {
         theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(theaterList));
+    }
+
+    public void addMoviesToComboBox(String[] movieList) {
+
     }
 
     public void addMovieComboBoxListener(ActionListener listenForMovieComboBox) {
