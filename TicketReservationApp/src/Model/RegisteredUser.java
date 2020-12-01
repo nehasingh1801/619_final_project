@@ -12,7 +12,7 @@ public class RegisteredUser {
 	
 	private String password;
 	
-	private int creditcardNumber;
+	private long creditcardNumber;
 	
 	private Date registrationStartDate;
 	//User does not need a foreign key refund
@@ -20,7 +20,7 @@ public class RegisteredUser {
 
 	private double userFee;
 
-	public RegisteredUser(String name, String username, String password, String address, int cardNum, Date registrationStartDate) {
+	public RegisteredUser(String name, String username, String password, String address, long cardNum, Date registrationStartDate) {
 		setName(name);
 		setUsername(username);
 		setPassword(password);
@@ -62,11 +62,11 @@ public class RegisteredUser {
 		this.password = password;
 	}
 
-	public int getCreditcardNumber() {
+	public long getCreditcardNumber() {
 		return creditcardNumber;
 	}
 
-	public void setCreditcardNumber(int creditcardNumber) {
+	public void setCreditcardNumber(long creditcardNumber) {
 		this.creditcardNumber = creditcardNumber;
 	}
 

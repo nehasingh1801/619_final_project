@@ -6,6 +6,8 @@ import Model.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ManageUser {
 
@@ -80,7 +82,7 @@ public class ManageUser {
             else {
                 RegisteredUser regUser = new RegisteredUser(userView.getNameField(), userView.getUsernameField(),
                         userView.getPasswordField(), userView.getAddressField(),
-                        Integer.parseInt(userView.getCardNumField()));
+                        Integer.parseInt(userView.getCardNumField()), new Date());
 
                 userView.displayRegistrationMessage("User successfully registered");
                 //TODO: add regUser to RegisteredUserList

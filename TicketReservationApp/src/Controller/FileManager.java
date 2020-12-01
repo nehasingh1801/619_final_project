@@ -132,12 +132,12 @@ public class FileManager {
 			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
-				String[] splitData = data.split(";",3);
+				String[] splitData = data.split(";",6);
 //				System.out.println(splitData[0]+ " ,  " + splitData[1] + " , " + splitData[2]);
 				RegisteredUser s;
 				try {
 //					s = new Schedule(new Theater(splitData[0], ""), new Movie(splitData[1],""), sdf.parse(splitData[2]));
-					s = new RegisteredUser(splitData[0], splitData[1],splitData[2],splitData[3], Integer.parseInt(splitData[4]),sdf.parse(splitData[5]));
+					s = new RegisteredUser(splitData[0], splitData[1],splitData[2],splitData[3], Long.parseLong(splitData[4]),sdf.parse(splitData[5]));
 					reguser.add(s);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
