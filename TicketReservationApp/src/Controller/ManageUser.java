@@ -3,6 +3,7 @@ package Controller;
 import View.*;
 import Model.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,7 +37,10 @@ public class ManageUser {
                 loginView.displayErrorMessage("Enter both username and password to login");
             }
             //TODO: verify login info and then display searchGUI as a registered user
-            searchGUI.displayGUI();
+            else {
+                loginView.setState(Frame.ICONIFIED);
+                searchGUI.displayGUI();
+            }
 
         }
     }
@@ -44,6 +48,7 @@ public class ManageUser {
     class newRegistrationButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             //display UserInfoGUI
+            loginView.setState(Frame.ICONIFIED);
             userView.displayGUI();
         }
     }
@@ -51,6 +56,7 @@ public class ManageUser {
     class guestButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             //TODO: display searchGUI as an ordinary user
+            loginView.setState(Frame.ICONIFIED);
             searchGUI.displayGUI();
         }
     }
