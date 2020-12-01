@@ -128,4 +128,15 @@ public class OfferingList {
 		return schedule;
 
 	}
+	
+	
+	
+	public String[] listSchedule(String movieName, String theaterName) {
+		String[] temp = new String[searchSchedule(movieName, theaterName).size()];
+		for(int i = 0; i < temp.length; i++) {
+			temp[i] = searchSchedule(movieName, theaterName).get(i).getMovieName();
+		}
+		
+		return temp;
+	}
 }
