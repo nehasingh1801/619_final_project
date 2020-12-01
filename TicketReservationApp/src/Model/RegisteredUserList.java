@@ -22,4 +22,16 @@ public class RegisteredUserList {
 		regUserList = fm.readRegisteredUserFile(); //shallow copy
 
 	}
+	
+	public boolean validateLogin(String username, String password) {
+		
+		for(RegisteredUser user : regUserList) {
+			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
 }
