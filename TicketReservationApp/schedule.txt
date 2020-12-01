@@ -22,62 +22,58 @@ PVR;North by Northwest;04-Dec-2020 13:00:00
 PVR;True Grit;04-Dec-2020 16:30:00
 PVR;True Grit;04-Dec-2020 19:30:00
 PVR;The Guard;04-Dec-2020 19:00:00
-
 Mini Complex;Shaun of the Dead;01-Dec-2020 16:30:00
 Mini Complex;Shaun of the Dead;01-Dec-2020 10:30:00
-Mini Complex;Pulp Fiction;01-Dec-2020 14.00.00
-Mini Complex;Pulp Fiction;01-Dec-2020 18.00.00
-Mini Complex;Taxi Driver;01-Dec-2020 11.00.00
-Mini Complex;Taxi Driver;01-Dec-2020 15.00.00
-Mini Complex;Lost in Translation;01-Dec-2020 18.30.00
-Mini Complex;Lost in Translation;01-Dec-2020 16.30.00
-Mini Complex;The Dark Knight;01-Dec-2020 10.00.00
-Mini Complex;The Dark Knight;01-Dec-2020 13.00.00
-Mini Complex;The Dark Knight;01-Dec-2020 15.00.00
-
-Mini Complex;Lost in Translation;02-Dec-2020 18.30.00
-Mini Complex;Lost in Translation;02-Dec-2020 16.30.00
-Mini Complex;The Dark Knight;02-Dec-2020 10.00.00
-Mini Complex;The Dark Knight;02-Dec-2020 13.00.00
-Mini Complex;The Dark Knight;02-Dec-2020 15.00.00
-Mini Complex;Lost in Translation;04-Dec-2020 18.30.00
-Mini Complex;Lost in Translation;04-Dec-2020 16.30.00
-Mini Complex;The Dark Knight;04-Dec-2020 10.00.00
-Mini Complex;The Dark Knight;04-Dec-2020 13.00.00
-Mini Complex;The Dark Knight;04-Dec-2020 15.00.00
+Mini Complex;Pulp Fiction;01-Dec-2020 14:00:00
+Mini Complex;Pulp Fiction;01-Dec-2020 18:00:00
+Mini Complex;Taxi Driver;01-Dec-2020 11:00:00
+Mini Complex;Taxi Driver;01-Dec-2020 15:00:00
+Mini Complex;Lost in Translation;01-Dec-2020 18:30:00
+Mini Complex;Lost in Translation;01-Dec-2020 16:30:00
+Mini Complex;The Dark Knight;01-Dec-2020 10:00:00
+Mini Complex;The Dark Knight;01-Dec-2020 13:00:00
+Mini Complex;The Dark Knight;01-Dec-2020 15:00:00
+Mini Complex;Lost in Translation;02-Dec-2020 18:30:00
+Mini Complex;Lost in Translation;02-Dec-2020 16:30:00
+Mini Complex;The Dark Knight;02-Dec-2020 10:00:00
+Mini Complex;The Dark Knight;02-Dec-2020 13:00:00
+Mini Complex;The Dark Knight;02-Dec-2020 15:00:00
+Mini Complex;Lost in Translation;04-Dec-2020 18:30:00
+Mini Complex;Lost in Translation;04-Dec-2020 16:30:00
+Mini Complex;The Dark Knight;04-Dec-2020 10:00:00
+Mini Complex;The Dark Knight;04-Dec-2020 13:00:00
+Mini Complex;The Dark Knight;04-Dec-2020 15:00:00
 Mini Complex;Shaun of the Dead;02-Dec-2020 16:30:00
 Mini Complex;Shaun of the Dead;04-Dec-2020 10:30:00
-Mini Complex;Pulp Fiction;02-Dec-2020 14.00.00
-Mini Complex;Pulp Fiction;04-Dec-2020 18.00.00
-Mini Complex;Taxi Driver;02-Dec-2020 11.00.00
-Mini Complex;Taxi Driver;04-Dec-2020 15.00.00
-Mini Complex;Lost in Translation;02-Dec-2020 18.30.00
-Mini Complex;Lost in Translation;04-Dec-2020 16.30.00
-Mini Complex;The Dark Knight;02-Dec-2020 10.00.00
-Mini Complex;The Dark Knight;04-Dec-2020 13.00.00
-Mini Complex;The Dark Knight;02-Dec-2020 15.00.00
+Mini Complex;Pulp Fiction;02-Dec-2020 14:00:00
+Mini Complex;Pulp Fiction;04-Dec-2020 18:00:00
+Mini Complex;Taxi Driver;02-Dec-2020 11:00:00
+Mini Complex;Taxi Driver;04-Dec-2020 15:00:00
+Mini Complex;Lost in Translation;02-Dec-2020 18:30:00
+Mini Complex;Lost in Translation;04-Dec-2020 16:30:00
+Mini Complex;The Dark Knight;02-Dec-2020 10:00:00
+Mini Complex;The Dark Knight;04-Dec-2020 13:00:00
+Mini Complex;The Dark Knight;02-Dec-2020 15:00:00
 Mini Complex;Shaun of the Dead;01-Dec-2020 16:30:00
-Mini Complex;Shaun of the Dead;02-Dec-202010:30:00
-Mini Complex;Pulp Fiction;01-Dec-2020 14.00.00
-Mini Complex;Pulp Fiction;02-Dec-2020 18.00.00
-Mini Complex;Taxi Driver;03-Dec-2020 11.00.00
-Mini Complex;Taxi Driver;01-Dec-2020 0415.00.00
-Mini Complex;Lost in Translation;01-Dec-2020 18.30.00
-Mini Complex;Lost in Translation;02-Dec-2020 16.30.00
-Mini Complex;The Dark Knight;03-Dec-2020 10.00.00
-Mini Complex;The Dark Knight;03-Dec-2020 13.00.00
-Mini Complex;The Dark Knight;03-Dec-2020 15.00.00
-NorthHill Theater;The Godfather;01-Dec-2020 12.00.00
-NorthHill Theater;The Godfather;02-Dec-2020 16.00.00
-NorthHill Theater;North by Northwest;01-Dec-2020 10.00.00
-NorthHill Theater;North by Northwest;03-Dec-2020 15.00.00
-NorthHill Theater;What We Do In The Shadows;01-Dec-2020 11.00.00
-NorthHill Theater;Snowpiercer;04-Dec-2020 18.00.00
-Downtown Complex;The Social Network;01-Dec-2020 10.00.00
-Downtown Complex;The Social Network;03-Dec-2020 15.00.00
-Downtown Complex;Blade Runner (The Final Cut);01-Dec-2020 12.00.00
-Downtown Complex;Blade Runner (The Final Cut);02-Dec-2020 16.00.00
-Downtown Complex;Badlands;04-Dec-2020 14.00.00
-Downtown Complex;Badlands;04-Dec-2020 15.00.00
-
-
+Mini Complex;Shaun of the Dead;02-Dec-2020 10:30:00
+Mini Complex;Pulp Fiction;01-Dec-2020 14:00:00
+Mini Complex;Pulp Fiction;02-Dec-2020 18:00:00
+Mini Complex;Taxi Driver;03-Dec-2020 11:00:00
+Mini Complex;Taxi Driver;01-Dec-2020 0415:00:00
+Mini Complex;Lost in Translation;01-Dec-2020 18:30:00
+Mini Complex;Lost in Translation;02-Dec-2020 16:30:00
+Mini Complex;The Dark Knight;03-Dec-2020 10:00:00
+Mini Complex;The Dark Knight;03-Dec-2020 13:00:00
+Mini Complex;The Dark Knight;03-Dec-2020 15:00:00
+NorthHill Theater;The Godfather;01-Dec-2020 12:00:00
+NorthHill Theater;The Godfather;02-Dec-2020 16:00:00
+NorthHill Theater;North by Northwest;01-Dec-2020 10:00:00
+NorthHill Theater;North by Northwest;03-Dec-2020 15:00:00
+NorthHill Theater;What We Do In The Shadows;01-Dec-2020 11:00:00
+NorthHill Theater;Snowpiercer;04-Dec-2020 18:00:00
+Downtown Complex;The Social Network;01-Dec-2020 10:00:00
+Downtown Complex;The Social Network;03-Dec-2020 15:00:00
+Downtown Complex;Blade Runner (The Final Cut);01-Dec-2020 12:00:00
+Downtown Complex;Blade Runner (The Final Cut);02-Dec-2020 16:00:00
+Downtown Complex;Badlands;04-Dec-2020 14:00:00
+Downtown Complex;Badlands;04-Dec-2020 15:00:00

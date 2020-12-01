@@ -44,7 +44,7 @@ public class FileManager {
 			Scanner myReader = new Scanner(myObj);
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
-				String[] splitData = data.split(";",5);
+				String[] splitData = data.split(";",2);
 				Movie i = new Movie(splitData[1],splitData[0]);
 				movieList.add(i);
 				
@@ -67,7 +67,7 @@ public class FileManager {
 			Scanner myReader = new Scanner(myObj);
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
-				String[] splitData = data.split(";",5);
+				String[] splitData = data.split(";",2);
 				Theater t = new Theater(splitData[0], splitData[1]);
 				theaterList.add(t);
 				
@@ -91,7 +91,8 @@ public class FileManager {
 			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
-				String[] splitData = data.split(";",5);
+				String[] splitData = data.split(";",3);
+//				System.out.println(splitData[0]+ " ,  " + splitData[1] + " , " + splitData[2]);
 				Schedule s;
 				try {
 					s = new Schedule(new Theater(splitData[0], ""), new Movie(splitData[1],""), sdf.parse(splitData[2]));

@@ -2,6 +2,8 @@ package Model;
 
 import java.util.ArrayList;
 
+import Controller.FileManager;
+
 public class TheaterList {
 	
 	private ArrayList<Theater> theaterList;
@@ -22,4 +24,17 @@ public class TheaterList {
 		return null;
 	}
 
+	
+	public void loadTheaterRepo(String filename) {
+
+		FileManager fm = new FileManager(filename);
+		theaterList = fm.readTheaterFile(); //shallow copy
+
+	}
+	
+	public void listTheaters(){
+        for(Theater t: theaterList){
+            System.out.println("Theater: " + t);
+        }
+    }
 }
