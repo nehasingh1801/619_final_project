@@ -20,12 +20,13 @@ public class RegisteredUser {
 
 	private double userFee;
 
-	public RegisteredUser(String name, String username, String password, String address, int cardNum) {
+	public RegisteredUser(String name, String username, String password, String address, int cardNum, Date registrationStartDate) {
 		setName(name);
 		setUsername(username);
 		setPassword(password);
 		setAddress(address);
 		setCreditcardNumber(cardNum);
+		this.registrationStartDate = registrationStartDate;
 	}
 
 

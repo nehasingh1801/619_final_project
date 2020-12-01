@@ -1,0 +1,3 @@
+Sam;sam;sam001@hotmail.com;st01 NE Calgary;123456789123;01-Dec-2019 13:00:00
+Mike;mike;mike001@hotmail.com;st01 NE Calgary;123456789123;15-Aug-2020 13:00:00
+Patrick;pat;patrick001@mail.com;st01 NE Calgary;123456789123;15-Nov-2019 13:00:00
