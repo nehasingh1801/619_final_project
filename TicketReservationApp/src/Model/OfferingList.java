@@ -51,28 +51,7 @@ public class OfferingList {
 		this.scheduleList = scheduleList;
 	}
 
-	// added by Neha
-	// public ArrayList<Date> getSchedule(String movieName, String theaterName) {
-	//
-	// ArrayList<Date> showtimes = null;
-	//
-	//// Movie m = movieList.searchMovie(movieName);
-	// for (Movie m : movieList.getMovie()) {
-	//
-	// for (Theater t : theaterList.getTheaterList()) {
-	// if (m.getMovieName().equalsIgnoreCase(movieName) &&
-	// t.getTheaterName().equalsIgnoreCase(theaterName)) {
-	//
-	// showtimes.add(schedule.getShowtime());
-	//
-	// }
-	// }
-	//
-	// }
-	//
-	// return showtimes;
-	//
-	// }
+
 	
 
 	public ArrayList<Schedule> searchMovieList(String theaterName) {
@@ -81,6 +60,8 @@ public class OfferingList {
 		for (Schedule s : scheduleList) {
 
 			if (s.getTheaterName().equalsIgnoreCase(theaterName)) {
+				
+				
 				schedule.add(s);
 			}
 
@@ -108,21 +89,15 @@ public class OfferingList {
 		}
 
 		for (Schedule s : scheduleList) {
-			//
-			// System.out.println(s.getMovieName());
-			// System.out.println( s.getTheaterName());
+
 
 			if (s.getMovieName().equalsIgnoreCase(movieName) && s.getTheaterName().equalsIgnoreCase(theaterName)) {
 
-				// System.out.println("inside if loop");
-				// System.out.println(s);
+
 
 				schedule.add(s);
-				// return s;
 			}
-			// else {
-			// continue;
-			// }
+
 		}
 
 		return schedule;
