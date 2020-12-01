@@ -24,7 +24,7 @@ public class TheaterList {
 		return null;
 	}
 
-	
+
 	public void loadTheaterRepo(String filename) {
 
 		FileManager fm = new FileManager(filename);
