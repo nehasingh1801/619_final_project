@@ -61,12 +61,14 @@ public class OfferingList {
 
 			if (s.getTheaterName().equalsIgnoreCase(theaterName)) {
 				
-				if(schedule.contains(s)) {
-					continue;
-				}
-				else {
-					schedule.add(s);
-				}
+				schedule.add(s);
+				
+//				if(!schedule.contains(s.getMovieName())) {
+//					
+//					System.out.println("movie not present");
+////					continue;
+//				}
+				
 				
 				
 			}
@@ -82,6 +84,8 @@ public class OfferingList {
 		for(int i = 0; i < movieNames.length; i++) {
 			movieNames[i] = searchMovieList(name).get(i).getMovieName();
 		}
+		
+		
 		
 		return movieNames;
 	}
