@@ -68,4 +68,28 @@ public class RegisteredUserList {
 		return true;
 		
 	}
+	
+	
+	public void printRegUSerList() {
+		
+		for(RegisteredUser user : regUserList) {
+			System.out.println(user);
+		}
+	}
+	
+	//adds user to registered user list and writes to the file
+	public void addRegisteredUser(RegisteredUser regUser){
+		
+		String filename= "registereduserlist.txt";
+		regUserList.add(regUser);
+		
+		FileManager fm = new FileManager(filename);
+		fm.writeToFile(regUser.toString());
+		fm.readRegisteredUserFile();
+		
+		System.out.println("printing updated registered user list: \n");
+		printRegUSerList();
+		
+		
+	} 
 }

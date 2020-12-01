@@ -159,7 +159,8 @@ public class FileManager {
 		return reguser;
 	}
 	
-	private void writeToFile(String text) {
+	@SuppressWarnings("unused")
+	public void writeToFile(String text) {
 		try {
 			 String filename= "registereduserlist.txt";
 			 FileWriter fw = new FileWriter(filename,true); //the true will append the new data

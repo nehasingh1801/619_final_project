@@ -94,5 +94,16 @@ public class RegisteredUser {
 		this.userFee = userFee;
 	}
 	
+	
+	@Override
+	public String toString() {
+		
+		
+		return name+";"+username+";"+password+";"+address+";"+creditcardNumber+";"+registrationStartDate;
+		
+		
+		
+	}
+	
 
 }
