@@ -172,6 +172,13 @@ public class SearchEngine {
         }
     }
 
+    class purchaseButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            transactionGUI.displayGUI();
+        }
+    }
+
+
 
     private void addSearchViewListeners() {
         searchView.addMovieComboBoxListener(new movieComboBoxListener());
@@ -181,15 +188,11 @@ public class SearchEngine {
         searchView.addRefundButtonActionListener(new refundButtonListener());
     }
 
-    class purchaseButtonListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            transactionGUI.displayGUI();
-        }
-    }
-
     class movieComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            String theaterName = searchView.getTheaterComboBoxItem();
+            String movieName = searchView.getMovieComboBoxItem();
+            searchView.addShowtimesToComboBox(offeringList.listSchedule(movieName, theaterName));
         }
     }
 
@@ -203,7 +206,7 @@ public class SearchEngine {
 
     class showtimeComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            String showtime = searchView.getShowtimeComboBoxItem();
         }
     }
 
