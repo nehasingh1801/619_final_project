@@ -10,10 +10,12 @@ public class SearchEngine {
 
     private SeatMapGUI seatMap;
     private SearchGUI searchView;
+    private TransactionGUI transactionGUI;
 
-    public SearchEngine(SeatMapGUI seatMap, SearchGUI searchView) {
+    public SearchEngine(SeatMapGUI seatMap, SearchGUI searchView, TransactionGUI transactionGUI) {
         this.seatMap = seatMap;
         this.searchView = searchView;
+        this.transactionGUI = transactionGUI;
 
         addSearchViewListeners();
         addSeatMapListeners();
@@ -176,8 +178,7 @@ public class SearchEngine {
 
     class purchaseButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            TransactionGUI transaction = new TransactionGUI();
-            transaction.displayGUI();
+            transactionGUI.displayGUI();
         }
     }
 

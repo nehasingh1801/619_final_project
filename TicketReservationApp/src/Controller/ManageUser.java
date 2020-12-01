@@ -10,10 +10,12 @@ public class ManageUser {
 
     private LoginGUI loginView;
     private UserInfoGUI userView;
+    private SearchGUI searchGUI;
 
-    public ManageUser(LoginGUI loginView, UserInfoGUI userView) {
+    public ManageUser(LoginGUI loginView, UserInfoGUI userView, SearchGUI searchGUI) {
         this.loginView = loginView;
         this.userView = userView;
+        this.searchGUI = searchGUI;
 
         addUserViewListeners();
         addLoginViewListeners();
@@ -34,6 +36,7 @@ public class ManageUser {
                 loginView.displayErrorMessage("Enter both username and password to login");
             }
             //TODO: verify login info and then display searchGUI as a registered user
+            searchGUI.displayGUI();
 
         }
     }
@@ -48,6 +51,7 @@ public class ManageUser {
     class guestButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             //TODO: display searchGUI as an ordinary user
+            searchGUI.displayGUI();
         }
     }
 
