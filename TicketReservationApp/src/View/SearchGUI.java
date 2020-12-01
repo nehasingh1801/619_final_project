@@ -23,6 +23,7 @@ public class SearchGUI extends JFrame {
     private javax.swing.JComboBox<String> theaterComboBox;
     private javax.swing.JLabel theaterLabel;
     private javax.swing.JButton viewSeatsButton;
+    private javax.swing.DefaultComboBoxModel<String> dmTheater;
 
 
     public SearchGUI() {
@@ -51,6 +52,7 @@ public class SearchGUI extends JFrame {
         receiptNumField = new javax.swing.JTextField();
         receiptNumLabel = new javax.swing.JLabel();
         refundButton = new javax.swing.JButton();
+        dmTheater = new javax.swing.DefaultComboBoxModel<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Purchase or Refund Ticket");
@@ -62,7 +64,8 @@ public class SearchGUI extends JFrame {
 
         showtimeLabel.setText("Showtime");
 
-        theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT THEATER" }));
+        dmTheater.addElement( "SELECT THEATER" );
+        theaterComboBox.setModel(dmTheater);
 
         movieComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT MOVIE", "MOVIE 1", "MOVIE 2", "MOVIE 3" }));
 
@@ -166,7 +169,11 @@ public class SearchGUI extends JFrame {
 
 
     public void addTheatersToComboBox(String[] theaterList) {
-        theaterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(theaterList));
+        for(int i = 0; i<theaterList.length; i++) {
+            dmTheater.addElement(theaterList[i]);
+        }
+
+        theaterComboBox.setModel(dmTheater);
     }
 
     public void addMoviesToComboBox(String[] movieList) {
