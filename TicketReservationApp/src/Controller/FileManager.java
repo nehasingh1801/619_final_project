@@ -11,9 +11,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 import Model.Movie;
+import Model.MovieList;
 import Model.RegisteredUser;
 import Model.Schedule;
 import Model.Theater;
+import Model.TheaterList;
 
 
 public class FileManager {
@@ -91,7 +93,7 @@ public class FileManager {
 		return theaterList;
 	}
 
-	public ArrayList<Schedule> readScheduleFile() {
+	public ArrayList<Schedule> readScheduleFile(MovieList movies, TheaterList theaters) {
 	ArrayList<Schedule> schedule = new ArrayList<Schedule>();
 
 		try {
@@ -101,9 +103,11 @@ public class FileManager {
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
 				String[] splitData = data.split(";",3);
+				Movie movie = movies.searchMovie(splitData[1]);
+				Theater theater = theaters.searchTheater(splitData[0]);
 				Schedule s;
 				try {
-					s = new Schedule(splitData[0], splitData[1], sdf.parse(splitData[2]));
+					s = new Schedule(theater, movie, sdf.parse(splitData[2]));
 					schedule.add(s);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block

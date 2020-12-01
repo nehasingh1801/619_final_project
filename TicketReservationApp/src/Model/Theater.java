@@ -15,7 +15,7 @@ public class Theater {
 	public Theater(String theaterName, String theaterAddress) {
 		this.setTheaterName(theaterName);
 		this.setTheaterAddress(theaterAddress);
-		
+		schedule = new ArrayList<Schedule>();
 	}
 
 	public Seat searchSeat(int seatNum) {
@@ -23,6 +23,10 @@ public class Theater {
 			if(s.getSeatNumber() == seatNum)
 				return s;
 		return null;
+	}
+	
+	public void addSchedule(Schedule s) {
+		schedule.add(s);
 	}
 	
 	public String getTheaterName() {

@@ -18,8 +18,8 @@ public class Schedule {
 	
 
 	
-	private String movieName;
-	private String theaterName;
+	private Movie movieName;
+	private Theater theaterName;
 
 
 //	public Schedule(Theater theater,Movie movie,Date showtime) {
@@ -28,8 +28,9 @@ public class Schedule {
 //		this.showtime = showtime;
 //	}
 	
-	public Schedule(String theaterName,String movieName,Date showtime) {
+	public Schedule(Theater theaterName,Movie movieName,Date showtime) {
 		this.setMovieName(movieName);
+		theaterName.addSchedule(this);
 		this.setTheaterName(theaterName);
 		this.showtime = showtime;
 	}
@@ -73,21 +74,21 @@ public class Schedule {
 
 
 	public String getMovieName() {
-		return movieName;
+		return movieName.getMovieDirector();
 	}
 
 
-	public void setMovieName(String movieName) {
+	public void setMovieName(Movie movieName) {
 		this.movieName = movieName;
 	}
 
 
 	public String getTheaterName() {
-		return theaterName;
+		return theaterName.getTheaterName();
 	}
 
 
-	public void setTheaterName(String theaterName) {
+	public void setTheaterName(Theater theaterName) {
 		this.theaterName = theaterName;
 	}
 	

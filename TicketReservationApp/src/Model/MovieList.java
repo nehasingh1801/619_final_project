@@ -15,7 +15,7 @@ public class MovieList {
 
 	public Movie searchMovie(String movieName) {
 		for(Movie m : movieList)
-			if(m.getMovieDirector().toLowerCase().contains(movieName.toLowerCase()))
+			if(m.getMovieName().toLowerCase().contains(movieName.toLowerCase()))
 				return m;
 		return null;
 	}

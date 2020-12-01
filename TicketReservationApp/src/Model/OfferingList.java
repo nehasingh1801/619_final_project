@@ -23,7 +23,7 @@ public class OfferingList {
 	public void loadOfferings(String filename) {
 
 		FileManager fm = new FileManager(filename);
-		setScheduleList(fm.readScheduleFile()); // shallow copy
+		setScheduleList(fm.readScheduleFile(movieList, theaterList)); // shallow copy
 
 	}
 
@@ -61,6 +61,9 @@ public class OfferingList {
 		return theaterNames;
 	}
 	
+	public void addSchedule(Schedule s) {
+		scheduleList.add(s);
+	}
 
 	public ArrayList<Schedule> searchMovieList(String theaterName) {
 		ArrayList<Schedule> schedule = new ArrayList<Schedule>();

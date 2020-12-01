@@ -10,7 +10,7 @@ public class TicketReservationSystem {
 	private TheaterList theaterList;
 	private MovieList movieList;
 	private RegisteredUserList userList;
-	private Schedule schedule;
+	private OfferingList scheduleList;
 	
 	
 //	private Schedule schedule;
@@ -33,7 +33,8 @@ public class TicketReservationSystem {
 		if(theater == null) return;
 		Movie movie= movieList.searchMovie(movieName);
 		if(movie == null) return;
-//		theater.addSchedule(movie, showTime);
+		Schedule newSchedule = new Schedule(theater, movie, showTime);
+		scheduleList.addSchedule(newSchedule);
 	}
 	
 	
