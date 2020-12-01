@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class SeatMapGUI extends JFrame {
 
@@ -208,6 +209,92 @@ public class SeatMapGUI extends JFrame {
 
         pack();
     }// </editor-fold>
+
+
+    public void addPurchaseButtonListener(ActionListener listenForPurchaseButton) {
+        purchaseButton.addActionListener(listenForPurchaseButton);
+    }
+
+    public void addSeat1ButtonListener(ActionListener listenForSeat1Button) {
+        seat1Button.addActionListener(listenForSeat1Button);
+    }
+
+    public void addSeat2ButtonListener(ActionListener listenForSeat2Button) {
+        seat2Button.addActionListener(listenForSeat2Button);
+    }
+
+    public void addSeat3ButtonListener(ActionListener listenForSeat3Button) {
+        seat3Button.addActionListener(listenForSeat3Button);
+    }
+
+    public void addSeat4ButtonListener(ActionListener listenForSeat4Button) {
+        seat4Button.addActionListener(listenForSeat4Button);
+    }
+
+    public void addSeat5ButtonListener(ActionListener listenForSeat5Button) {
+        seat5Button.addActionListener(listenForSeat5Button);
+    }
+
+    public void addSeat6ButtonListener(ActionListener listenForSeat6Button) {
+        seat6Button.addActionListener(listenForSeat6Button);
+    }
+
+    public void addSeat7ButtonListener(ActionListener listenForSeat7Button) {
+        seat7Button.addActionListener(listenForSeat7Button);
+    }
+
+    public void addSeat8ButtonListener(ActionListener listenForSeat8Button) {
+        seat8Button.addActionListener(listenForSeat8Button);
+    }
+
+    public void addSeat9ButtonListener(ActionListener listenForSeat9Button) {
+        seat9Button.addActionListener(listenForSeat9Button);
+    }
+
+    public void addSeat10ButtonListener(ActionListener listenForSeat10Button) {
+        seat10Button.addActionListener(listenForSeat10Button);
+    }
+
+    public void addSeat11ButtonListener(ActionListener listenForSeat11Button) {
+        seat11Button.addActionListener(listenForSeat11Button);
+    }
+
+    public void addSeat12ButtonListener(ActionListener listenForSeat12Button) {
+        seat12Button.addActionListener(listenForSeat12Button);
+    }
+
+    public void addSeat13ButtonListener(ActionListener listenForSeat13Button) {
+        seat13Button.addActionListener(listenForSeat13Button);
+    }
+
+    public void addSeat14ButtonListener(ActionListener listenForSeat14Button) {
+        seat14Button.addActionListener(listenForSeat14Button);
+    }
+
+    public void addSeat15ButtonListener(ActionListener listenForSeat15Button) {
+        seat15Button.addActionListener(listenForSeat15Button);
+    }
+
+    public void addSeat16ButtonListener(ActionListener listenForSeat16Button) {
+        seat16Button.addActionListener(listenForSeat16Button);
+    }
+
+    public void addSeat17ButtonListener(ActionListener listenForSeat17Button) {
+        seat17Button.addActionListener(listenForSeat17Button);
+    }
+
+    public void addSeat18ButtonListener(ActionListener listenForSeat18Button) {
+        seat18Button.addActionListener(listenForSeat18Button);
+    }
+
+    public void addSeat19ButtonListener(ActionListener listenForSeat19Button) {
+        seat19Button.addActionListener(listenForSeat19Button);
+    }
+
+    public void addSeat20ButtonListener(ActionListener listenForSeat20Button) {
+        seat20Button.addActionListener(listenForSeat20Button);
+    }
+
 
 
     public void displayGUI() {

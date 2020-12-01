@@ -2,18 +2,21 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class LoginGUI extends JFrame {
 
     // Variables declaration
-    private javax.swing.JButton guestButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton loginButton;
-    private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
-    private javax.swing.JButton registerButton;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel userLabel;
+
+    private javax.swing.JButton guestButton;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JButton registerButton;
+
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField usernameField;
     // End of variables declaration
 
@@ -121,6 +124,31 @@ public class LoginGUI extends JFrame {
 
         pack();
     }// </editor-fold>
+
+    public void addGuestButtonListener(ActionListener listenForGuestButton) {
+        guestButton.addActionListener(listenForGuestButton);
+    }
+
+    public void addLoginButtonListener(ActionListener listenForGuestButton) {
+        loginButton.addActionListener(listenForGuestButton);
+    }
+
+    public void addRegisterButtonListener(ActionListener listenForRegisterButton) {
+        registerButton.addActionListener(listenForRegisterButton);
+    }
+
+    public String getUserField() {
+        return usernameField.getText();
+    }
+
+    public String getPasswordField() {
+        return String.valueOf(passwordField.getPassword());
+    }
+
+    public void displayErrorMessage(String errorMessage) {
+        JOptionPane.showMessageDialog(this, errorMessage);
+    }
+
 
     public void displayGUI() {
         /* Set the Nimbus look and feel */
