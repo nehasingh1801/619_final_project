@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.Date;
 import java.util.Random;
 
 public class PaymentReceipt {
@@ -10,8 +11,11 @@ public class PaymentReceipt {
 	
 	private String creditCard;
 	
+	private Date receiptDate;
+	
 	public PaymentReceipt() {
-		receiptId = 10000 + new Random().nextInt(90000);
+		this.receiptId = 10000 + new Random().nextInt(90000);
+		this.receiptDate = new Date();
 	}
 
 	public int getReceiptId() {
@@ -36,6 +40,14 @@ public class PaymentReceipt {
 
 	public void setCreditCard(String creditCard) {
 		this.creditCard = creditCard;
+	}
+
+	public Date getReceiptDate() {
+		return receiptDate;
+	}
+
+	public void setReceiptDate(Date receiptDate) {
+		this.receiptDate = receiptDate;
 	}
 
 }

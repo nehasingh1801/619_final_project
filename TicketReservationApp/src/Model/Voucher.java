@@ -1,12 +1,25 @@
 package Model;
 
 import java.util.Date;
+import java.util.Random;
 
 public class Voucher {
 	//Where is the voucher from? Payment foreign key needed (not null)
 	private double value;
 	private Date startDate;
 	private Date expiryDate;
+	private String voucherId;
+	
+	public Voucher (String voucherId, Date startDate, Date expiryDate, double value) {
+		
+		this.voucherId = "Voucher" + 100 + new Random().nextInt(900);
+		this.startDate = startDate;
+		this.expiryDate = expiryDate;
+		this.value = value;
+		
+	}
+	
+	
 	public double getValue() {
 		return value;
 	}
@@ -24,6 +37,16 @@ public class Voucher {
 	}
 	public void setExpiryDate(Date expiryDate) {
 		this.expiryDate = expiryDate;
+	}
+
+
+	public String getVoucherId() {
+		return voucherId;
+	}
+
+
+	public void setVoucherId(String voucherId) {
+		this.voucherId = voucherId;
 	}
 
 }

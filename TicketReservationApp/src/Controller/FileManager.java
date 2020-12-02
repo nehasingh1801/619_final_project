@@ -16,6 +16,7 @@ import Model.RegisteredUser;
 import Model.Schedule;
 import Model.Theater;
 import Model.TheaterList;
+import Model.Voucher;
 
 
 public class FileManager {
@@ -93,6 +94,43 @@ public class FileManager {
 		return theaterList;
 	}
 
+	
+	public ArrayList<Voucher> readVoucherFile() {
+		ArrayList<Voucher> voucherList = new ArrayList<Voucher>();
+
+			try {
+				File myObj = new File(filename);
+				Scanner myReader = new Scanner(myObj);
+				SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+				while (myReader.hasNextLine()) {
+					String data = myReader.nextLine();
+					String[] splitData = data.split(";",4);
+					Voucher v;
+					try {
+						v = new Voucher(splitData[0], sdf.parse(splitData[1]),sdf.parse(splitData[2]), Double.parseDouble(splitData[3]));
+						voucherList.add(v);
+					} catch (NumberFormatException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+
+				myReader.close();
+
+			} catch (FileNotFoundException e) {
+				System.out.println("An error occurred.");
+				e.printStackTrace();
+			}
+
+			return voucherList;
+		}
+	
+	
+	
 	public ArrayList<Schedule> readScheduleFile(MovieList movies, TheaterList theaters) {
 	ArrayList<Schedule> schedule = new ArrayList<Schedule>();
 
