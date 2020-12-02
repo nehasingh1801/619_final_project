@@ -12,6 +12,7 @@ public class TicketReservationSystem {
 	private RegisteredUserList userList = new RegisteredUserList();
 	private OfferingList scheduleList = new OfferingList(movieList, theaterList);
 	private VoucherList voucherList = new VoucherList();
+	private PaymentReceiptList pymtRcptList = new PaymentReceiptList();
 	private LoginGUI login = new LoginGUI();
 	private SearchGUI search = new SearchGUI();
 	private SeatMapGUI seats = new SeatMapGUI();
@@ -28,17 +29,18 @@ public class TicketReservationSystem {
 	
 	//private DatabaseCommunicator comm;
 	
-	public TicketReservationSystem(String movieFileName, String theaterFileName, String scheduleFileName, String regUserFileName, String voucherFileName) {
+	public TicketReservationSystem(String movieFileName, String theaterFileName, String scheduleFileName, String regUserFileName, String voucherFileName, String receiptfile) {
 		//Database connection here
 		theaterList.loadTheaterRepo(theaterFileName);
 		movieList.loadMovieRepo(movieFileName);
 		userList.loadRegisteredUserRepo(regUserFileName);
 		scheduleList.loadOfferings(scheduleFileName);
 		voucherList.loadVoucherRepo(voucherFileName);
+		pymtRcptList.loadReceiptRepo(receiptfile);
 		managePurchase = new ManagePurchase(trans, voucherList);
 		manageUser = new ManageUser(login, user, meberPortalView, search, userList, managePurchase);
 		searchEngine = new SearchEngine(seats, search, trans, scheduleList);
-		cancellationController = new ManageCancellation(search, managePurchase, userList);
+		cancellationController = new ManageCancellation(search, managePurchase, userList, pymtRcptList);
 	}
 	
 	public void run() {
@@ -72,7 +74,7 @@ public class TicketReservationSystem {
 		String receiptfile = "receipts.txt";
 		
 		TicketReservationSystem system = new TicketReservationSystem(movieFileName
-				, theaterFileName, scheduleFileName, filename, voucherFileName);
+				, theaterFileName, scheduleFileName, filename, voucherFileName, receiptfile);
 		system.run();
 	/**
 		MovieList movieList = new MovieList();

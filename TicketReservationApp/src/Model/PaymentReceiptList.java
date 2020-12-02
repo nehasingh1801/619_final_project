@@ -9,6 +9,10 @@ public class PaymentReceiptList {
 
 	private ArrayList<PaymentReceipt> receiptList;
 
+	public PaymentReceiptList() {
+		receiptList = new ArrayList<PaymentReceipt>();
+	}
+	
 	public ArrayList<PaymentReceipt> getReceiptList() {
 		return receiptList;
 	}
