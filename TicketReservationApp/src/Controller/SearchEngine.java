@@ -6,6 +6,7 @@ import Model.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class SearchEngine {
 
@@ -186,9 +187,14 @@ public class SearchEngine {
         		seatMap.setWarning("You must select at least one vacant seat.");
         		return;
         	}
-        	if((user instanceof RegisteredUser) && seatMap.getSchedule().registeredRate() > 0.1) {
-        		seatMap.setWarning("No more available seats for registered customer.");
-        		return;
+        	double ratio = transactionGUI.getSeat().size()/seatMap.getSchedule().getSeatReservation().size();
+        	if((user instanceof RegisteredUser) && seatMap.getSchedule().registeredRate() + ratio > 0.1) {
+        		//Suppose that public announcement comes 7 days before showtime
+        		Date today = new Date();
+        		if(seatMap.getSchedule().getShowtime().getTime() - today.getTime() > 604800000) {
+        			seatMap.setWarning("No more available seats for registered customer.");
+        			return;
+        		}
         	}  		
             seatMap.setState(Frame.ICONIFIED); 
             transactionGUI.setSeatReminder();
