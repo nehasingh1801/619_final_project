@@ -16,6 +16,9 @@ public class Theater {
 		this.setTheaterName(theaterName);
 		this.setTheaterAddress(theaterAddress);
 		schedule = new ArrayList<Schedule>();
+		seats = new ArrayList<Seat>();
+		for(int i = 1; i <= 20; i++)
+			seats.add(new Seat(i));
 	}
 
 	public Seat searchSeat(int seatNum) {

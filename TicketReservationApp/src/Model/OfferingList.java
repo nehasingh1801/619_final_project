@@ -135,7 +135,13 @@ public class OfferingList {
 
 	}
 	
-	
+	public Schedule searchSchedule(String movieName, String theaterName, String date) {
+		ArrayList<Schedule> candidates = searchSchedule(movieName, theaterName);
+		for(Schedule s : candidates)
+			if(s.getShowtime().toString().contentEquals(date))
+				return s;
+		return null;
+	}
 	
 	public String[] listSchedule(String movieName, String theaterName) {
 		String[] temp = new String[searchSchedule(movieName, theaterName).size()];

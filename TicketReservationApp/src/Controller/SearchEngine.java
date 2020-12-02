@@ -30,6 +30,7 @@ public class SearchEngine {
 
     }
 
+
     private void addSeatMapListeners() {
         seatMap.addPurchaseButtonListener(new purchaseButtonListener());
         seatMap.addSeat1ButtonListener(new seat1ButtonListener());
@@ -214,6 +215,11 @@ public class SearchEngine {
 
     class viewSeatButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+        	String movieName = searchView.getMovieComboBoxItem();
+        	String theaterName = searchView.getTheaterComboBoxItem();
+        	String date = searchView.getShowtimeComboBoxItem();
+        	Schedule schedule = offeringList.searchSchedule(movieName, theaterName, date);
+        	seatMap.setSchedule(schedule);
             searchView.setState(Frame.ICONIFIED);
             seatMap.displayGUI();
         }

@@ -33,6 +33,9 @@ public class Schedule {
 		theaterName.addSchedule(this);
 		this.setTheaterName(theaterName);
 		this.showtime = showtime;
+		seatReservation = new ArrayList<SeatReservation>();
+		for(Seat s : theaterName.getSeats())
+			seatReservation.add(new SeatReservation(s));
 	}
 	
 	
@@ -77,6 +80,11 @@ public class Schedule {
 		return movieName.getMovieDirector();
 	}
 
+	public SeatReservation searchSeat(int i) {
+		for(SeatReservation s : seatReservation)
+			if(s.getSeatNumber()==i) return s;
+		return null;
+	}
 
 	public void setMovieName(Movie movieName) {
 		this.movieName = movieName;
@@ -85,6 +93,21 @@ public class Schedule {
 
 	public String getTheaterName() {
 		return theaterName.getTheaterName();
+	}
+	
+	public void vacantASeat(int num) {
+		SeatReservation seat = this.searchSeat(num);
+		seat.setBookingStatus("vacant");
+	}
+	
+	public void bookASeat(int num) {
+		SeatReservation seat = this.searchSeat(num);
+		seat.setBookingStatus("booked");
+	}
+	
+	public void registerASeat(int num) {
+		SeatReservation seat = this.searchSeat(num);
+		seat.setBookingStatus("registered");
 	}
 
 

@@ -11,5 +11,9 @@ public class Seat {
 	public void setSeatNumber(int seatNumber) {
 		this.seatNumber = seatNumber;
 	}
+	
+	public Seat(int num) {
+		seatNumber = num;
+	}
 
 }
