@@ -25,6 +25,15 @@ public class RegisteredUserList {
 
 	}
 	
+	public RegisteredUser searchUser(String username) {
+		for(RegisteredUser user : regUserList) {
+			if(user.getUsername().equals(username)) {
+				return user;
+			}
+		}
+		return null;
+	}
+	
 	public boolean validateLogin(String username, String password) {
 		
 		for(RegisteredUser user : regUserList) {

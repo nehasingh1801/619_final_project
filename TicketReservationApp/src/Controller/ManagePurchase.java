@@ -10,12 +10,22 @@ import java.awt.event.ActionListener;
 public class ManagePurchase {
 
     private TransactionGUI transactionGUI;
+    private User user;
 
     public ManagePurchase(TransactionGUI transactionGUI) {
         this.transactionGUI = transactionGUI;
-
         transactionGUI.addPurchaseButtonListener(new confirmPurchaseListener());
-
+    }
+    
+    public void fillText() {
+    	if(!(user instanceof RegisteredUser)) return;
+    	RegisteredUser temp = (RegisteredUser)user;
+    	transactionGUI.setText(temp.getName(), temp.getAddress(), temp.getUsername(), String.valueOf(temp.getCreditcardNumber()));
+    }
+    
+    public void setUser(User u) {
+    	user = u;
+    	fillText();
     }
 
     class confirmPurchaseListener implements ActionListener {

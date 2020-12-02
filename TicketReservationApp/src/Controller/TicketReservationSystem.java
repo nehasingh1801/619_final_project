@@ -100,7 +100,7 @@ public class TicketReservationSystem {
 		MemberPortal meberPortalView = new MemberPortal();
 		
 		ManagePurchase managePurchase = new ManagePurchase(trans);
-		ManageUser manageUser = new ManageUser(login, user, meberPortalView, search, regUSerList);
+		ManageUser manageUser = new ManageUser(login, user, meberPortalView, search, regUSerList, managePurchase);
 		SearchEngine searchEngine = new SearchEngine(seats, search, trans, offeringList);
 
 		login.displayGUI();
