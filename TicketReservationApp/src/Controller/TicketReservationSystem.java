@@ -45,6 +45,7 @@ public class TicketReservationSystem {
 		String theaterFileName = "theaters.txt";
 		String scheduleFileName = "schedule.txt";
 		String filename = "registereduserlist.txt";
+		String voucherFileName = "vouchers.txt";
 		
 		MovieList movieList = new MovieList();
 		//loads movies info into movie List
@@ -62,35 +63,10 @@ public class TicketReservationSystem {
 		RegisteredUserList regUSerList = new RegisteredUserList();
 		regUSerList.loadRegisteredUserRepo(filename);
 		
+		VoucherList voucherList = new VoucherList();
+		voucherList.loadVoucherRepo(filename);
 		
-//		//print movies.
-//		movieList.listMovies();
-//		
-//		//select movie
-//		String tempMov = "True Grit";
-//
-//		
-//		//print theaters
-//		theaterList.listTheaters();
-//
-//		//select theater
-//		String tempTheater = "PVR";
-//		
-//		//select movielist based on theater
-//		ArrayList<Schedule> movies = offeringList.searchMovieList( tempTheater);
-//		System.out.println("\nlist of movies \n");
-//		for(int i=0 ; i<movies.size(); i++) {
-//			System.out.println(movies.get(i).getMovieName());
-//		}
-//		
-//		
-//		//select schedule
-//		ArrayList<Schedule> temp = offeringList.searchSchedule(tempMov, tempTheater);
-//		
-//		for(int i=0 ; i<temp.size(); i++) {
-//			System.out.println(temp.get(i).getShowtime());
-//		}
-//		ArrayList<Date> showtimelist= schedules.getSchedule(tempMov, tempTheater);
+		
 
 		LoginGUI login = new LoginGUI();
 		SearchGUI search = new SearchGUI();
