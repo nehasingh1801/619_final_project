@@ -10,13 +10,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-import Model.Movie;
-import Model.MovieList;
-import Model.RegisteredUser;
-import Model.Schedule;
-import Model.Theater;
-import Model.TheaterList;
-import Model.Voucher;
+import Model.*;
+
 
 
 public class FileManager {
@@ -210,6 +205,34 @@ public class FileManager {
 		{
 		    System.err.println("IOException: " + ioe.getMessage());
 		}
+	}
+
+
+	public ArrayList<PaymentReceipt> readReceiptFile() {
+
+		ArrayList<PaymentReceipt> pymtRcpt = new ArrayList<PaymentReceipt>();
+
+		try {
+			File myObj = new File(filename);
+			Scanner myReader = new Scanner(myObj);
+			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				String[] splitData = data.split(";",3);
+				
+				PaymentReceipt s;
+				s = new PaymentReceipt();
+				pymtRcpt.add(s);
+				
+				
+
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		return pymtRcpt;
 	}
 
 	

@@ -50,4 +50,10 @@ public class PaymentReceipt {
 		this.receiptDate = receiptDate;
 	}
 
+	
+	public void validateReceiptId() {
+		
+		//validate receiptDate
+		
+	}
 }
