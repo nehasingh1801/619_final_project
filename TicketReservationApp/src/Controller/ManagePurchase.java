@@ -27,16 +27,22 @@ public class ManagePurchase {
     	user = u;
     	fillText();
     }
+    
 
     class confirmPurchaseListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if(transactionGUI.getNameField().isEmpty() | transactionGUI.getAddress().isEmpty() |
                     transactionGUI.getEmail().isEmpty() | transactionGUI.getCardNum().isEmpty()) {
                 transactionGUI.displayErrorMessage("Enter all required information to complete purchase");
+                return;
             }
-
+            for(SeatReservation s : transactionGUI.getSeat()) {
+            	String bookingStatus = (user instanceof RegisteredUser)? "registered" : "booked";
+            	s.setBookingStatus(bookingStatus);
+            }
             //TODO: add code to create tickets and receipt
             //TODO: add code to handle whether voucher is provided or not (including verification)
+            transactionGUI.dispose();
         }
     }
 
