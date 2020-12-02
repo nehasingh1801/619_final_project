@@ -177,6 +177,13 @@ public class TransactionGUI extends JFrame {
     public void displayConfirmation(String confirmationMessage) {
         JOptionPane.showMessageDialog(this, confirmationMessage);
     }
+    
+    public void setText(String name, String address, String email, String cardNum) {
+    	nameField.setText(name);
+    	addressField.setText(address);
+    	emailField.setText(email);
+    	cardNumField.setText(cardNum);
+    }
 
 
     public void displayGUI() {

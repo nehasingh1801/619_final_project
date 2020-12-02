@@ -3,7 +3,7 @@ package Model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class RegisteredUser {
+public class RegisteredUser extends User{
 	
 	private String name;
 	
