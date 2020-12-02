@@ -220,6 +220,7 @@ public class SearchEngine {
         	String date = searchView.getShowtimeComboBoxItem();
         	Schedule schedule = offeringList.searchSchedule(movieName, theaterName, date);
         	seatMap.setSchedule(schedule);
+
             searchView.setState(Frame.ICONIFIED);
             seatMap.displayGUI();
         }

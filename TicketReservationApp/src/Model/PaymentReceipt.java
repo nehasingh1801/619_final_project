@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Random;
+
 public class PaymentReceipt {
 	//Needs a registered user as foreign key (null)
 	private int receiptId;
@@ -7,6 +9,10 @@ public class PaymentReceipt {
 	private Ticket ticket;
 	
 	private String creditCard;
+	
+	public PaymentReceipt() {
+		receiptId = 10000 + new Random().nextInt(90000);
+	}
 
 	public int getReceiptId() {
 		return receiptId;

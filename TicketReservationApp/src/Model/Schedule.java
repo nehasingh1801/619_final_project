@@ -21,6 +21,7 @@ public class Schedule {
 	private Movie movieName;
 	private Theater theaterName;
 
+	private int scheduleId ;
 
 //	public Schedule(Theater theater,Movie movie,Date showtime) {
 //		this.movie = movie;

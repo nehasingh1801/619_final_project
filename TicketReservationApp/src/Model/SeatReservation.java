@@ -4,6 +4,8 @@ public class SeatReservation {
 	
 	private Seat seat;
 	
+	
+	
 	private String bookingStatus;
 	//Can be: vacant, booked, registered
 	public Seat getSeat() {

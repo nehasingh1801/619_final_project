@@ -1,5 +1,6 @@
 package Model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class RegisteredUser {
@@ -97,9 +98,9 @@ public class RegisteredUser {
 	
 	@Override
 	public String toString() {
+		SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");  
 		
-		
-		return name+";"+username+";"+password+";"+address+";"+creditcardNumber+";"+registrationStartDate;
+		return name+";"+username+";"+password+";"+address+";"+creditcardNumber+";"+sdf.format(registrationStartDate);
 		
 		
 		
