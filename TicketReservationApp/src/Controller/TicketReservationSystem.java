@@ -75,9 +75,10 @@ public class TicketReservationSystem {
 		UserInfoGUI user = new UserInfoGUI();
 		MemberPortal meberPortalView = new MemberPortal();
 		
-		ManagePurchase managePurchase = new ManagePurchase(trans);
+		ManagePurchase managePurchase = new ManagePurchase(trans, voucherList);
 		ManageUser manageUser = new ManageUser(login, user, meberPortalView, search, regUSerList, managePurchase);
 		SearchEngine searchEngine = new SearchEngine(seats, search, trans, offeringList);
+		ManageCancellation cancellationController = new ManageCancellation(search, managePurchase, regUSerList);
 
 		login.displayGUI();
 		

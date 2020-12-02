@@ -19,7 +19,7 @@ public class RegisteredUser extends User{
 	//User does not need a foreign key refund
 	private RefundConfirmation refund;
 
-	private double userFee;
+	private double userFee = 20.0;
 
 	public RegisteredUser(String name, String username, String password, String address, long cardNum, Date registrationStartDate) {
 		setName(name);
@@ -93,6 +93,10 @@ public class RegisteredUser extends User{
 
 	public void setUserFee(double userFee) {
 		this.userFee = userFee;
+	}
+
+	public String payUserFee() {
+		return "$" + getUserFee() + " fee for user " + name + " has been charged.";
 	}
 	
 	

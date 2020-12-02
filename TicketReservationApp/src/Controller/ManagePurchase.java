@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
 public class ManagePurchase {
 
     private TransactionGUI transactionGUI;
+    private VoucherList voucherList;
     private User user;
 
-    public ManagePurchase(TransactionGUI transactionGUI) {
+    public ManagePurchase(TransactionGUI transactionGUI, VoucherList voucherList) {
         this.transactionGUI = transactionGUI;
+        this.voucherList = voucherList;
         transactionGUI.addPurchaseButtonListener(new confirmPurchaseListener());
     }
     
@@ -26,6 +28,10 @@ public class ManagePurchase {
     public void setUser(User u) {
     	user = u;
     	fillText();
+    }
+
+    public User getUser() {
+        return user;
     }
     
 
@@ -42,6 +48,15 @@ public class ManagePurchase {
             }
             //TODO: add code to create tickets and receipt
             //TODO: add code to handle whether voucher is provided or not (including verification)
+            if (!transactionGUI.getVoucherNum().isEmpty()) {
+                if (voucherList.validateVoucher(transactionGUI.getVoucherNum())) {
+                    transactionGUI.displayConfirmation("Voucher Applied & Payment Successful");
+                }
+                else {
+                    transactionGUI.displayErrorMessage("Invalid Voucher. Full payment value charged to credit card.");
+                }
+            }
+
             transactionGUI.dispose();
         }
     }
