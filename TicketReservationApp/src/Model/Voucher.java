@@ -12,7 +12,8 @@ public class Voucher {
 	
 	public Voucher (String voucherId, Date startDate, Date expiryDate, double value) {
 		
-		this.voucherId = "Voucher" + 100 + new Random().nextInt(900);
+//		this.voucherId = "Voucher" + 100 + new Random().nextInt(900);
+		this.voucherId = voucherId;
 		this.startDate = startDate;
 		this.expiryDate = expiryDate;
 		this.value = value;

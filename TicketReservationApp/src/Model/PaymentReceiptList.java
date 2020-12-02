@@ -25,6 +25,8 @@ public class PaymentReceiptList {
 	}
 
 	public String UserSearchReceiptId(int receviptId, Date sysdate) {
+		
+		System.out.println(receviptId);
 
 		for (PaymentReceipt p : receiptList) {
 
@@ -40,6 +42,8 @@ public class PaymentReceiptList {
 	}
 
 	public String registeredUSerSearchRcptID(int receviptId, Date sysdate) {
+		
+		System.out.println(receviptId);
 
 		for (PaymentReceipt p : receiptList) {
 

@@ -65,7 +65,7 @@ public class TicketReservationSystem {
 		regUSerList.loadRegisteredUserRepo(filename);
 		
 		VoucherList voucherList = new VoucherList();
-		voucherList.loadVoucherRepo(filename);
+		voucherList.loadVoucherRepo(voucherFileName);
 		
 		PaymentReceiptList pymtRcptList = new PaymentReceiptList();
 		pymtRcptList.loadReceiptRepo(receiptfile);
