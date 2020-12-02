@@ -4,6 +4,8 @@ public class SeatReservation {
 	
 	private Seat seat;
 	
+	
+	
 	private String bookingStatus;
 
 	public Seat getSeat() {

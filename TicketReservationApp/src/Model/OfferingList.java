@@ -79,7 +79,7 @@ public class OfferingList {
 					schedule.add(s);
 					
 				}else {
-					
+					//don't do anyhting
 				}
 				
 				

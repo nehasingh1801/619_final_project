@@ -56,7 +56,7 @@ public class FileManager {
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
 				String[] splitData = data.split(";",2);
-				Movie i = new Movie(splitData[1],splitData[0]);
+				Movie i = new Movie(splitData[0],splitData[1]);
 				movieList.add(i);
 			}
 
@@ -164,7 +164,7 @@ public class FileManager {
 		try {
 			 String filename= "registereduserlist.txt";
 			 FileWriter fw = new FileWriter(filename,true); //the true will append the new data
-			 fw.write("text");//appends the string to the file
+			 fw.write("\n"+text);//appends the string to the file
 			 fw.close();
 
 			System.out.println("Successfully wrote to the file.");

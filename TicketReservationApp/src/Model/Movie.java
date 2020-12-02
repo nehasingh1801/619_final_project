@@ -7,7 +7,7 @@ public class Movie {
 	private String movieName;
 	private String movieDirector;
 	
-	public Movie(String movieName, String movieDirector) {
+	public Movie(String movieDirector, String movieName) {
 		this.setMovieDirector(movieDirector);
 		this.setMovieName(movieName);
 	}

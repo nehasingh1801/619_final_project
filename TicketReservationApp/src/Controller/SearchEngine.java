@@ -214,6 +214,10 @@ public class SearchEngine {
 
     class viewSeatButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+//        	System.out.println("###### "+searchView.getMovieComboBoxItem());
+//        	System.out.println("###### "+searchView.getShowtimeComboBoxItem());
+        	seatMap.setMovieName(searchView.getMovieComboBoxItem());
+        	seatMap.setShowTimeId(searchView.getShowtimeComboBoxItem());
             searchView.setState(Frame.ICONIFIED);
             seatMap.displayGUI();
         }

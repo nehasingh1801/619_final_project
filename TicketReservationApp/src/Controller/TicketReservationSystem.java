@@ -97,9 +97,10 @@ public class TicketReservationSystem {
 		SeatMapGUI seats = new SeatMapGUI();
 		TransactionGUI trans = new TransactionGUI();
 		UserInfoGUI user = new UserInfoGUI();
-
+		MemberPortal meberPortalView = new MemberPortal();
+		
 		ManagePurchase managePurchase = new ManagePurchase(trans);
-		ManageUser manageUser = new ManageUser(login, user, search);
+		ManageUser manageUser = new ManageUser(login, user, meberPortalView, search, regUSerList);
 		SearchEngine searchEngine = new SearchEngine(seats, search, trans, offeringList);
 
 		login.displayGUI();

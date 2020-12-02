@@ -85,7 +85,7 @@ public class RegisteredUserList {
 		
 		FileManager fm = new FileManager(filename);
 		fm.writeToFile(regUser.toString());
-		fm.readRegisteredUserFile();
+//		fm.readRegisteredUserFile();
 		
 		System.out.println("printing updated registered user list: \n");
 		printRegUSerList();
