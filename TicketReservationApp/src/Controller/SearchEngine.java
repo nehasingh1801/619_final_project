@@ -180,9 +180,13 @@ public class SearchEngine {
         public void actionPerformed(ActionEvent e) {
         	transactionGUI.clearSeat();
         	for(int i = 1; i <= 20; i++)
-        		if(seatMap.isSelected(i)) transactionGUI.addSeat(seatMap.getSchedule().searchSeat(i));
-        	if(transactionGUI.getSeat().isEmpty()) return;
-            seatMap.setState(Frame.ICONIFIED);
+        		if(seatMap.isSelected(i) && seatMap.getSchedule().isVacant(i)) transactionGUI.addSeat(seatMap.getSchedule().searchSeat(i));
+        	if(transactionGUI.getSeat().isEmpty()) {
+        		seatMap.setWarning("You must select at least one vacant seat.");
+        		return;
+        	}
+            seatMap.setState(Frame.ICONIFIED); 
+            transactionGUI.setSeatReminder();
             transactionGUI.displayGUI();
         }
     }

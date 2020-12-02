@@ -7,19 +7,42 @@ import View.*;
 
 public class TicketReservationSystem {
 
-	private TheaterList theaterList;
-	private MovieList movieList;
-	private RegisteredUserList userList;
-	private OfferingList scheduleList;
+	private TheaterList theaterList = new TheaterList();
+	private MovieList movieList = new MovieList();
+	private RegisteredUserList userList = new RegisteredUserList();
+	private OfferingList scheduleList = new OfferingList(movieList, theaterList);
+	private VoucherList voucherList = new VoucherList();
+	private LoginGUI login = new LoginGUI();
+	private SearchGUI search = new SearchGUI();
+	private SeatMapGUI seats = new SeatMapGUI();
+	private TransactionGUI trans = new TransactionGUI();
+	private UserInfoGUI user = new UserInfoGUI();
+	private MemberPortal meberPortalView = new MemberPortal();
 	
+	private ManagePurchase managePurchase;
+	private ManageUser manageUser;
+	private SearchEngine searchEngine;
+	private ManageCancellation cancellationController;
 	
 //	private Schedule schedule;
 	
 	//private DatabaseCommunicator comm;
 	
-	public TicketReservationSystem() {
+	public TicketReservationSystem(String movieFileName, String theaterFileName, String scheduleFileName, String regUserFileName, String voucherFileName) {
 		//Database connection here
-		
+		theaterList.loadTheaterRepo(theaterFileName);
+		movieList.loadMovieRepo(movieFileName);
+		userList.loadRegisteredUserRepo(regUserFileName);
+		scheduleList.loadOfferings(scheduleFileName);
+		voucherList.loadVoucherRepo(voucherFileName);
+		managePurchase = new ManagePurchase(trans, voucherList);
+		manageUser = new ManageUser(login, user, meberPortalView, search, userList, managePurchase);
+		searchEngine = new SearchEngine(seats, search, trans, scheduleList);
+		cancellationController = new ManageCancellation(search, managePurchase, userList);
+	}
+	
+	public void run() {
+		login.displayGUI();
 	}
 	
 	public Seat searchSeat(int seatNum, String theaterName) {
@@ -47,6 +70,10 @@ public class TicketReservationSystem {
 		String filename = "registereduserlist.txt";
 		String voucherFileName = "vouchers.txt";
 		
+		TicketReservationSystem system = new TicketReservationSystem(movieFileName
+				, theaterFileName, scheduleFileName, filename, voucherFileName);
+		system.run();
+	/**
 		MovieList movieList = new MovieList();
 		//loads movies info into movie List
 		movieList.loadMovieRepo(movieFileName);
@@ -81,9 +108,7 @@ public class TicketReservationSystem {
 		ManageCancellation cancellationController = new ManageCancellation(search, managePurchase, regUSerList);
 
 		login.displayGUI();
-		
-		
-		
+	**/
 	}
 
 }

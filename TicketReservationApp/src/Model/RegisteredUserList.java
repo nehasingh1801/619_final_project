@@ -10,6 +10,10 @@ public class RegisteredUserList {
 
 	private  ArrayList<RegisteredUser> regUserList ;
 
+	public RegisteredUserList() {
+		regUserList = new ArrayList<RegisteredUser>();
+	}
+	
 	public ArrayList<RegisteredUser> getRegUserList() {
 		return regUserList;
 	}

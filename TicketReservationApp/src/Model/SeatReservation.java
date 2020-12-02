@@ -29,6 +29,10 @@ public class SeatReservation {
 		bookingStatus = "vacant";
 	}
 	
+	public boolean isVacant() {
+		return bookingStatus.toLowerCase().contentEquals("vacant");
+	}
+	
 	public int getSeatNumber() {
 		return seat.getSeatNumber();
 	}

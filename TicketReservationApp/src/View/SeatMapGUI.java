@@ -8,6 +8,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import Model.Schedule;
 import Model.SeatReservation;
+import java.awt.Font;
 
 public class SeatMapGUI extends JFrame {
 
@@ -41,6 +42,7 @@ public class SeatMapGUI extends JFrame {
     private final JLabel lblNewLabel_4 = new JLabel("Registered:");
     private final JLabel lblNewLabel_5 = new JLabel("MAGENTA");
     private Schedule schedule;
+    private JLabel warningLabel;
     // End of variables declaration
 
     public SeatMapGUI() {
@@ -107,7 +109,7 @@ public class SeatMapGUI extends JFrame {
         setTitle("Seat Map");
         setResizable(false);
 
-        screenLabel.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        screenLabel.setFont(new Font("Dialog", Font.PLAIN, 13)); // NOI18N
         screenLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         screenLabel.setText("SCREEN");
 
@@ -153,6 +155,9 @@ public class SeatMapGUI extends JFrame {
         seat19Button.setText("19");
 
         seat20Button.setText("20");
+        
+        warningLabel = new JLabel("");
+        warningLabel.setForeground(Color.RED);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -220,7 +225,10 @@ public class SeatMapGUI extends JFrame {
         					.addGap(30)
         					.addComponent(lblNewLabel_2)
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addComponent(lblNewLabel_3)))
+        					.addComponent(lblNewLabel_3))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(125)
+        					.addComponent(warningLabel)))
         			.addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -264,7 +272,9 @@ public class SeatMapGUI extends JFrame {
         				.addComponent(seat18Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
         				.addComponent(seat19Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
         				.addComponent(seat20Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-        			.addPreferredGap(ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(warningLabel)
+        			.addPreferredGap(ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
         			.addComponent(purchaseButton)
         			.addGap(34))
         );
@@ -356,6 +366,10 @@ public class SeatMapGUI extends JFrame {
 
     public void addSeat20ButtonListener(ActionListener listenForSeat20Button) {
         seat20Button.addActionListener(listenForSeat20Button);
+    }
+    
+    public void setWarning(String warning) {
+    	warningLabel.setText(warning);
     }
     
     public void selectSeat(int i) {

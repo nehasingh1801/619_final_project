@@ -7,6 +7,10 @@ import Controller.FileManager;
 public class VoucherList {
 
 	private ArrayList<Voucher> voucherList;
+	
+	public VoucherList() {
+		voucherList = new ArrayList<Voucher>();
+	}
 
 	public ArrayList<Voucher> getVoucherList() {
 		return voucherList;
