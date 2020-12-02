@@ -63,33 +63,33 @@ public class TicketReservationSystem {
 		regUSerList.loadRegisteredUserRepo(filename);
 		
 		
-		//print movies.
-		movieList.listMovies();
-		
-		//select movie
-		String tempMov = "True Grit";
-
-		
-		//print theaters
-		theaterList.listTheaters();
-
-		//select theater
-		String tempTheater = "PVR";
-		
-		//select movielist based on theater
-		ArrayList<Schedule> movies = offeringList.searchMovieList( tempTheater);
-		System.out.println("\nlist of movies \n");
-		for(int i=0 ; i<movies.size(); i++) {
-			System.out.println(movies.get(i).getMovieName());
-		}
-		
-		
-		//select schedule
-		ArrayList<Schedule> temp = offeringList.searchSchedule(tempMov, tempTheater);
-		
-		for(int i=0 ; i<temp.size(); i++) {
-			System.out.println(temp.get(i).getShowtime());
-		}
+//		//print movies.
+//		movieList.listMovies();
+//		
+//		//select movie
+//		String tempMov = "True Grit";
+//
+//		
+//		//print theaters
+//		theaterList.listTheaters();
+//
+//		//select theater
+//		String tempTheater = "PVR";
+//		
+//		//select movielist based on theater
+//		ArrayList<Schedule> movies = offeringList.searchMovieList( tempTheater);
+//		System.out.println("\nlist of movies \n");
+//		for(int i=0 ; i<movies.size(); i++) {
+//			System.out.println(movies.get(i).getMovieName());
+//		}
+//		
+//		
+//		//select schedule
+//		ArrayList<Schedule> temp = offeringList.searchSchedule(tempMov, tempTheater);
+//		
+//		for(int i=0 ; i<temp.size(); i++) {
+//			System.out.println(temp.get(i).getShowtime());
+//		}
 //		ArrayList<Date> showtimelist= schedules.getSchedule(tempMov, tempTheater);
 
 		LoginGUI login = new LoginGUI();
