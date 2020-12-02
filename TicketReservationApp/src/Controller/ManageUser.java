@@ -16,7 +16,7 @@ public class ManageUser {
     private SearchGUI searchGUI;
     private MemberPortal memberPortal;
     private ManagePurchase purchaseController;
-    RegisteredUserList regList;
+    private RegisteredUserList regList;
 
     public ManageUser(LoginGUI loginView, UserInfoGUI userView, MemberPortal memberPortal, SearchGUI searchGUI, RegisteredUserList regList, ManagePurchase purchaseController) {
         this.loginView = loginView;

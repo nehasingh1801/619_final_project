@@ -7,6 +7,10 @@ import Controller.FileManager;
 public class TheaterList {
 	
 	private ArrayList<Theater> theaterList;
+	
+	public TheaterList() {
+		theaterList = new ArrayList<Theater>();
+	}
 
 	public ArrayList<Theater> getTheaterList() {
 		return theaterList;

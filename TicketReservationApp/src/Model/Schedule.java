@@ -14,10 +14,6 @@ public class Schedule {
 	private Date showtime;
 	
 	private ArrayList<SeatReservation> seatReservation;
-	
-	
-
-	
 	private Movie movieName;
 	private Theater theaterName;
 
@@ -59,6 +55,12 @@ public class Schedule {
 //	public void setMovie(Movie movie) {
 //		this.movie = movie;
 //	}
+	
+	public boolean isVacant(int i) {
+		SeatReservation seat = this.searchSeat(i);
+		if(seat == null) return false;
+		return seat.isVacant();
+	}
 
 	public ArrayList<SeatReservation> getSeatReservation() {
 		return seatReservation;

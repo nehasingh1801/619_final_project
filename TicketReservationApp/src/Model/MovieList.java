@@ -9,6 +9,10 @@ public class MovieList {
 	
 	private ArrayList<Movie> movieList;
 
+	public MovieList() {
+		movieList = new ArrayList<Movie>();
+	}
+	
 	public ArrayList<Movie> getMovie() {
 		return movieList;
 	}
