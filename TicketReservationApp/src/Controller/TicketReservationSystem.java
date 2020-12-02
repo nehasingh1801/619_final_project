@@ -46,6 +46,7 @@ public class TicketReservationSystem {
 		String scheduleFileName = "schedule.txt";
 		String filename = "registereduserlist.txt";
 		String voucherFileName = "vouchers.txt";
+		String receiptfile = "receipts.txt";
 		
 		MovieList movieList = new MovieList();
 		//loads movies info into movie List
@@ -65,6 +66,9 @@ public class TicketReservationSystem {
 		
 		VoucherList voucherList = new VoucherList();
 		voucherList.loadVoucherRepo(filename);
+		
+		PaymentReceiptList pymtRcptList = new PaymentReceiptList();
+		pymtRcptList.loadReceiptRepo(receiptfile);
 		
 		
 
