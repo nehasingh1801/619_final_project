@@ -2,6 +2,12 @@ package View;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.awt.Color;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+import Model.Schedule;
+import Model.SeatReservation;
 
 public class SeatMapGUI extends JFrame {
 
@@ -28,9 +34,20 @@ public class SeatMapGUI extends JFrame {
     private javax.swing.JToggleButton seat7Button;
     private javax.swing.JToggleButton seat8Button;
     private javax.swing.JToggleButton seat9Button;
+    private final JLabel lblNewLabel = new JLabel("Vacant:");
+    private final JLabel lblNewLabel_1 = new JLabel("BLUE");
+    private final JLabel lblNewLabel_2 = new JLabel("Booked:");
+    private final JLabel lblNewLabel_3 = new JLabel("RED");
+    private final JLabel lblNewLabel_4 = new JLabel("Registered:");
+    private final JLabel lblNewLabel_5 = new JLabel("MAGENTA");
+    private Schedule schedule;
     // End of variables declaration
 
     public SeatMapGUI() {
+    	lblNewLabel_5.setForeground(Color.MAGENTA);
+    	lblNewLabel_3.setForeground(Color.RED);
+    	lblNewLabel_3.setBackground(Color.WHITE);
+    	lblNewLabel_1.setForeground(Color.BLUE);
         initComponents();
     }
 
@@ -45,26 +62,46 @@ public class SeatMapGUI extends JFrame {
 
         screenLabel = new javax.swing.JLabel();
         seat1Button = new javax.swing.JToggleButton();
+        seat1Button.setForeground(Color.BLUE);
         seat2Button = new javax.swing.JToggleButton();
+        seat2Button.setForeground(Color.BLUE);
         seat3Button = new javax.swing.JToggleButton();
+        seat3Button.setForeground(Color.BLUE);
         seat4Button = new javax.swing.JToggleButton();
+        seat4Button.setForeground(Color.BLUE);
         seat5Button = new javax.swing.JToggleButton();
+        seat5Button.setForeground(Color.BLUE);
         seat6Button = new javax.swing.JToggleButton();
+        seat6Button.setForeground(Color.BLUE);
         seat7Button = new javax.swing.JToggleButton();
+        seat7Button.setForeground(Color.BLUE);
         seat8Button = new javax.swing.JToggleButton();
+        seat8Button.setForeground(Color.BLUE);
         seat9Button = new javax.swing.JToggleButton();
+        seat9Button.setForeground(Color.BLUE);
         seat10Button = new javax.swing.JToggleButton();
+        seat10Button.setForeground(Color.BLUE);
         seat11Button = new javax.swing.JToggleButton();
+        seat11Button.setForeground(Color.BLUE);
         seat12Button = new javax.swing.JToggleButton();
+        seat12Button.setForeground(Color.BLUE);
         purchaseButton = new javax.swing.JButton();
         seat13Button = new javax.swing.JToggleButton();
+        seat13Button.setForeground(Color.BLUE);
         seat14Button = new javax.swing.JToggleButton();
+        seat14Button.setForeground(Color.BLUE);
         seat15Button = new javax.swing.JToggleButton();
+        seat15Button.setForeground(Color.BLUE);
         seat16Button = new javax.swing.JToggleButton();
+        seat16Button.setForeground(Color.BLUE);
         seat17Button = new javax.swing.JToggleButton();
+        seat17Button.setForeground(Color.BLUE);
         seat18Button = new javax.swing.JToggleButton();
+        seat18Button.setForeground(Color.BLUE);
         seat19Button = new javax.swing.JToggleButton();
+        seat19Button.setForeground(Color.BLUE);
         seat20Button = new javax.swing.JToggleButton();
+        seat20Button.setForeground(Color.BLUE);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seat Map");
@@ -118,95 +155,120 @@ public class SeatMapGUI extends JFrame {
         seat20Button.setText("20");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(screenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(seat1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(seat11Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat12Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat13Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat14Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat15Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(seat6Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat7Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat8Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat9Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat10Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(seat16Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(seat17Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(seat18Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(seat19Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addComponent(purchaseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(seat20Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 42, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(38)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(screenLabel, GroupLayout.PREFERRED_SIZE, 274, GroupLayout.PREFERRED_SIZE)
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(seat11Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat12Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat13Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat14Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat15Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(seat6Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat7Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat8Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat9Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat10Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(seat16Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        								.addGroup(layout.createSequentialGroup()
+        									.addComponent(seat17Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(seat18Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(seat19Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        								.addComponent(purchaseButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat20Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(seat1Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat2Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(seat3Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        								.addGroup(layout.createSequentialGroup()
+        									.addComponent(lblNewLabel_4)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(lblNewLabel_5))
+        								.addGroup(layout.createSequentialGroup()
+        									.addComponent(seat4Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(seat5Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))))))
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(lblNewLabel)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(lblNewLabel_1)
+        					.addGap(30)
+        					.addComponent(lblNewLabel_2)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(lblNewLabel_3)))
+        			.addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(screenLabel)
-                                .addGap(56, 56, 56)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(seat1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(seat6Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat7Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat8Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat9Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat10Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(seat11Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat12Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat13Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat14Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat15Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(seat16Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat17Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat18Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat19Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(seat20Button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                                .addComponent(purchaseButton)
-                                .addGap(34, 34, 34))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(17)
+        			.addComponent(screenLabel)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(lblNewLabel)
+        				.addComponent(lblNewLabel_1)
+        				.addComponent(lblNewLabel_2)
+        				.addComponent(lblNewLabel_3)
+        				.addComponent(lblNewLabel_4)
+        				.addComponent(lblNewLabel_5))
+        			.addGap(36)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(seat1Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat2Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat3Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat4Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat5Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(seat6Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat7Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat8Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat9Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat10Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(seat11Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat12Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat13Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat14Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat15Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(seat16Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat17Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat18Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat19Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(seat20Button, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+        			.addComponent(purchaseButton)
+        			.addGap(34))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>
@@ -296,7 +358,43 @@ public class SeatMapGUI extends JFrame {
         seat20Button.addActionListener(listenForSeat20Button);
     }
 
-
+    public void setSchedule(Schedule s) {
+    	this.schedule = s;
+    	setButtonColor(seat1Button, 1);
+    	setButtonColor(seat2Button, 2);
+    	setButtonColor(seat3Button, 3);
+    	setButtonColor(seat4Button, 4);
+    	setButtonColor(seat5Button, 5);
+    	setButtonColor(seat6Button, 6);
+    	setButtonColor(seat7Button, 7);
+    	setButtonColor(seat8Button, 8);
+    	setButtonColor(seat9Button, 9);
+    	setButtonColor(seat10Button, 10);
+    	setButtonColor(seat11Button, 11);
+    	setButtonColor(seat12Button, 12);
+    	setButtonColor(seat13Button, 13);
+    	setButtonColor(seat14Button, 14);
+    	setButtonColor(seat15Button, 15);
+    	setButtonColor(seat16Button, 16);
+    	setButtonColor(seat17Button, 17);
+    	setButtonColor(seat18Button, 18);
+    	setButtonColor(seat19Button, 19);
+    	setButtonColor(seat20Button, 20);
+    }
+    
+    private void setButtonColor(JToggleButton bt, int num) {
+    	SeatReservation seat = this.schedule.searchSeat(num);
+    	switch (seat.getBookingStatus()) {
+    	case "registered":
+    		bt.setForeground(Color.MAGENTA);
+    		break;
+    	case "booked":
+    		bt.setForeground(Color.RED);
+    		break;
+    	default:
+    		bt.setForeground(Color.BLUE);
+    	}
+    }
 
     public void displayGUI() {
         /* Set the Nimbus look and feel */
@@ -329,7 +427,5 @@ public class SeatMapGUI extends JFrame {
             }
         });
     }
-
-
 }
 
