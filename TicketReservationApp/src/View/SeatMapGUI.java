@@ -357,6 +357,93 @@ public class SeatMapGUI extends JFrame {
     public void addSeat20ButtonListener(ActionListener listenForSeat20Button) {
         seat20Button.addActionListener(listenForSeat20Button);
     }
+    
+    public void selectSeat(int i) {
+    	switch(i) {
+    	case 1:
+    		seat1Button.getModel().setPressed(false);
+    		break;
+    	case 2:
+			seat2Button.getModel().setPressed(false);
+    		break;
+    	case 3:
+    		seat3Button.getModel().setPressed(false);
+    		break;
+    	case 4:
+    		seat4Button.getModel().setPressed(false);
+    		break;
+    	case 5:
+    		seat5Button.getModel().setPressed(false);
+    		break;
+    	case 6:
+    		seat6Button.getModel().setPressed(false);
+    		break;
+    	case 7:
+    		seat7Button.getModel().setPressed(false);
+    		break;
+    	case 8:
+    		seat8Button.getModel().setPressed(false);
+    		break;
+    	case 9:
+    		seat9Button.getModel().setPressed(false);
+    		break;
+    	case 10:
+    		seat10Button.getModel().setPressed(false);
+    		break;
+    	case 11:
+    		seat11Button.getModel().setPressed(false);
+    		break;
+    	case 12:
+    		seat12Button.getModel().setPressed(false);
+    		break;
+    	case 13:
+    		seat13Button.getModel().setPressed(false);
+    		break;
+    	case 14:
+    		seat14Button.getModel().setPressed(false);
+    		break;
+    	case 15:
+    		seat15Button.getModel().setPressed(false);
+    		break;
+    	case 16:
+    		seat16Button.getModel().setPressed(false);
+    		break;
+    	case 17:
+    		seat17Button.getModel().setPressed(false);
+    		break;
+    	case 18:
+    		seat18Button.getModel().setPressed(false);
+    		break;
+    	case 19:
+    		seat19Button.getModel().setPressed(false);
+    		break;
+    	default:
+    		seat20Button.getModel().setPressed(false);
+    	}
+    }
+    
+    public void unselectAll() {
+    	seat1Button.setSelected(false);
+    	seat2Button.setSelected(false);
+    	seat3Button.setSelected(false);
+    	seat4Button.setSelected(false);
+    	seat5Button.setSelected(false);
+    	seat6Button.setSelected(false);
+    	seat7Button.setSelected(false);
+    	seat8Button.setSelected(false);
+    	seat9Button.setSelected(false);
+    	seat10Button.setSelected(false);
+    	seat11Button.setSelected(false);
+    	seat12Button.setSelected(false);
+    	seat13Button.setSelected(false);
+    	seat14Button.setSelected(false);
+    	seat15Button.setSelected(false);
+    	seat16Button.setSelected(false);
+    	seat17Button.setSelected(false);
+    	seat18Button.setSelected(false);
+    	seat19Button.setSelected(false);
+    	seat20Button.setSelected(false);
+    }
 
     public void setSchedule(Schedule s) {
     	this.schedule = s;
@@ -380,6 +467,55 @@ public class SeatMapGUI extends JFrame {
     	setButtonColor(seat18Button, 18);
     	setButtonColor(seat19Button, 19);
     	setButtonColor(seat20Button, 20);
+    }
+    
+    public boolean isSelected(int i) {
+    	switch(i) {
+    	case 1:
+    		return seat1Button.isSelected();
+    	case 2:
+    		return seat2Button.isSelected();
+    	case 3:
+    		return seat3Button.isSelected();
+    	case 4:
+    		return seat4Button.isSelected();
+    	case 5:
+    		return seat5Button.isSelected();
+    	case 6:
+    		return seat6Button.isSelected();
+    	case 7:
+    		return seat7Button.isSelected();
+    	case 8:
+    		return seat8Button.isSelected();
+    	case 9:
+    		return seat9Button.isSelected();
+    	case 10:
+    		return seat10Button.isSelected();
+    	case 11:
+    		return seat11Button.isSelected();
+    	case 12:
+    		return seat12Button.isSelected();
+    	case 13:
+    		return seat13Button.isSelected();
+    	case 14:
+    		return seat14Button.isSelected();
+    	case 15:
+    		return seat15Button.isSelected();
+    	case 16:
+    		return seat16Button.isSelected();
+    	case 17:
+    		return seat17Button.isSelected();
+    	case 18:
+    		return seat18Button.isSelected();
+    	case 19:
+    		return seat19Button.isSelected();
+    	default:
+    		return seat20Button.isSelected();
+    	}
+    }
+    
+    public Schedule getSchedule() {
+    	return schedule;
     }
     
     private void setButtonColor(JToggleButton bt, int num) {

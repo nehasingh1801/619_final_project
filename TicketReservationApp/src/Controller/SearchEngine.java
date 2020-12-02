@@ -57,126 +57,131 @@ public class SearchEngine {
 
     class seat1ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(1);
+        	
         }
     }
 
     class seat2ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(2);
         }
     }
 
     class seat3ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(3);
         }
     }
 
     class seat4ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(4);
         }
     }
 
     class seat5ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(5);
         }
     }
 
     class seat6ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(6);
         }
     }
 
     class seat7ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(7);
         }
     }
 
     class seat8ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(8);
         }
     }
 
     class seat9ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(9);
         }
     }
 
     class seat10ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(10);
         }
     }
 
     class seat11ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(11);
         }
     }
 
     class seat12ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(12);
         }
     }
 
     class seat13ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(13);
         }
     }
 
     class seat14ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(14);
         }
     }
 
     class seat15ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(15);
         }
     }
 
     class seat16ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(16);
         }
     }
 
     class seat17ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(17);
         }
     }
 
     class seat18ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(18);
         }
     }
 
     class seat19ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(19);
         }
     }
 
     class seat20ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+        	seatMap.selectSeat(20);
         }
     }
 
     class purchaseButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+        	transactionGUI.clearSeat();
+        	for(int i = 1; i <= 20; i++)
+        		if(seatMap.isSelected(i)) transactionGUI.addSeat(seatMap.getSchedule().searchSeat(i));
+        	if(transactionGUI.getSeat().isEmpty()) return;
             seatMap.setState(Frame.ICONIFIED);
             transactionGUI.displayGUI();
         }

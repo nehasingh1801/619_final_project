@@ -1,7 +1,11 @@
 package View;
 
 import javax.swing.*;
+
+import Model.SeatReservation;
+
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class TransactionGUI extends JFrame {
 
@@ -21,9 +25,11 @@ public class TransactionGUI extends JFrame {
     private javax.swing.JTextField voucherNumField;
 
     private javax.swing.JButton purchaseButton;
+    private ArrayList<SeatReservation> seat;
     // End of variables declaration
 
     public TransactionGUI() {
+    	seat = new ArrayList<SeatReservation>();
         initComponents();
     }
 
@@ -146,6 +152,22 @@ public class TransactionGUI extends JFrame {
         pack();
     }// </editor-fold>
 
+    public void addSeat(SeatReservation s) {
+    	seat.add(s);
+    }
+    
+    public ArrayList<SeatReservation> getSeat(){
+    	return seat;
+    }
+    
+    public void setSeat(ArrayList<SeatReservation> seat) {
+    	this.seat = seat;
+    }
+    
+    public void clearSeat() {
+    	seat = new ArrayList<SeatReservation>();
+    }
+    
     public void addPurchaseButtonListener(ActionListener listenForPurchaseButton) {
         purchaseButton.addActionListener(listenForPurchaseButton);
     }
