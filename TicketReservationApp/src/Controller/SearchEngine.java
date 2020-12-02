@@ -57,8 +57,8 @@ public class SearchEngine {
 
     class seat1ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-        	seatMap.unselectAll();
         	seatMap.selectSeat(1);
+        	
         }
     }
 

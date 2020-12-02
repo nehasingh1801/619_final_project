@@ -361,64 +361,65 @@ public class SeatMapGUI extends JFrame {
     public void selectSeat(int i) {
     	switch(i) {
     	case 1:
-    		seat1Button.setSelected(true);
+    		seat1Button.getModel().setPressed(false);
+    		//seat1Button.setSelected(!seat1Button.isSelected());
     		break;
     	case 2:
-    		seat2Button.setSelected(true);
+    		seat2Button.setSelected(!seat2Button.isSelected());
     		break;
     	case 3:
-    		seat3Button.setSelected(true);
+    		seat3Button.setSelected(!seat3Button.isSelected());
     		break;
     	case 4:
-    		seat4Button.setSelected(true);
+    		seat4Button.setSelected(!seat4Button.isSelected());
     		break;
     	case 5:
-    		seat5Button.setSelected(true);
+    		seat5Button.setSelected(!seat5Button.isSelected());
     		break;
     	case 6:
-    		seat6Button.setSelected(true);
+    		seat6Button.setSelected(!seat6Button.isSelected());
     		break;
     	case 7:
-    		seat7Button.setSelected(true);
+    		seat7Button.setSelected(!seat7Button.isSelected());
     		break;
     	case 8:
-    		seat8Button.setSelected(true);
+    		seat8Button.setSelected(!seat8Button.isSelected());
     		break;
     	case 9:
-    		seat9Button.setSelected(true);
+    		seat9Button.setSelected(!seat9Button.isSelected());
     		break;
     	case 10:
-    		seat10Button.setSelected(true);
+    		seat10Button.setSelected(!seat10Button.isSelected());
     		break;
     	case 11:
-    		seat11Button.setSelected(true);
+    		seat11Button.setSelected(!seat11Button.isSelected());
     		break;
     	case 12:
-    		seat12Button.setSelected(true);
+    		seat12Button.setSelected(!seat12Button.isSelected());
     		break;
     	case 13:
-    		seat13Button.setSelected(true);
+    		seat13Button.setSelected(!seat13Button.isSelected());
     		break;
     	case 14:
-    		seat14Button.setSelected(true);
+    		seat14Button.setSelected(!seat14Button.isSelected());
     		break;
     	case 15:
-    		seat15Button.setSelected(true);
+    		seat15Button.setSelected(!seat15Button.isSelected());
     		break;
     	case 16:
-    		seat16Button.setSelected(true);
+    		seat16Button.setSelected(!seat16Button.isSelected());
     		break;
     	case 17:
-    		seat17Button.setSelected(true);
+    		seat17Button.setSelected(!seat17Button.isSelected());
     		break;
     	case 18:
-    		seat18Button.setSelected(true);
+    		seat18Button.setSelected(!seat18Button.isSelected());
     		break;
     	case 19:
-    		seat19Button.setSelected(true);
+    		seat19Button.setSelected(!seat19Button.isSelected());
     		break;
     	default:
-    		seat20Button.setSelected(true);
+    		seat20Button.setSelected(!seat20Button.isSelected());
     	}
     }
     
