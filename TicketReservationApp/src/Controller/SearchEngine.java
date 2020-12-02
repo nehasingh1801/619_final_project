@@ -194,7 +194,7 @@ public class SearchEngine {
         searchView.addTheaterComboBoxListener(new theaterComboBoxListener());
         searchView.addShowtimeComboBoxListener(new showtimeComboBoxListener());
         searchView.addViewSeatButtonActionListener(new viewSeatButtonListener());
-        searchView.addRefundButtonActionListener(new refundButtonListener());
+
     }
 
     class theaterComboBoxListener implements ActionListener {
@@ -230,19 +230,6 @@ public class SearchEngine {
             seatMap.displayGUI();
         }
     }
-
-    class refundButtonListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            if (searchView.getReceiptNumber().isEmpty()) {
-                searchView.displayErrorMessage("Enter a receipt number to request refund");
-            }
-            else {
-                int receiptNum = Integer.parseInt(searchView.getReceiptNumber());
-            }
-
-        }
-    }
-
 
 
 }

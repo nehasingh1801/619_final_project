@@ -27,6 +27,10 @@ public class ManagePurchase {
     	user = u;
     	fillText();
     }
+
+    public User getUser() {
+        return user;
+    }
     
 
     class confirmPurchaseListener implements ActionListener {
