@@ -362,64 +362,63 @@ public class SeatMapGUI extends JFrame {
     	switch(i) {
     	case 1:
     		seat1Button.getModel().setPressed(false);
-    		//seat1Button.setSelected(!seat1Button.isSelected());
     		break;
     	case 2:
-    		seat2Button.setSelected(!seat2Button.isSelected());
+			seat2Button.getModel().setPressed(false);
     		break;
     	case 3:
-    		seat3Button.setSelected(!seat3Button.isSelected());
+    		seat3Button.getModel().setPressed(false);
     		break;
     	case 4:
-    		seat4Button.setSelected(!seat4Button.isSelected());
+    		seat4Button.getModel().setPressed(false);
     		break;
     	case 5:
-    		seat5Button.setSelected(!seat5Button.isSelected());
+    		seat5Button.getModel().setPressed(false);
     		break;
     	case 6:
-    		seat6Button.setSelected(!seat6Button.isSelected());
+    		seat6Button.getModel().setPressed(false);
     		break;
     	case 7:
-    		seat7Button.setSelected(!seat7Button.isSelected());
+    		seat7Button.getModel().setPressed(false);
     		break;
     	case 8:
-    		seat8Button.setSelected(!seat8Button.isSelected());
+    		seat8Button.getModel().setPressed(false);
     		break;
     	case 9:
-    		seat9Button.setSelected(!seat9Button.isSelected());
+    		seat9Button.getModel().setPressed(false);
     		break;
     	case 10:
-    		seat10Button.setSelected(!seat10Button.isSelected());
+    		seat10Button.getModel().setPressed(false);
     		break;
     	case 11:
-    		seat11Button.setSelected(!seat11Button.isSelected());
+    		seat11Button.getModel().setPressed(false);
     		break;
     	case 12:
-    		seat12Button.setSelected(!seat12Button.isSelected());
+    		seat12Button.getModel().setPressed(false);
     		break;
     	case 13:
-    		seat13Button.setSelected(!seat13Button.isSelected());
+    		seat13Button.getModel().setPressed(false);
     		break;
     	case 14:
-    		seat14Button.setSelected(!seat14Button.isSelected());
+    		seat14Button.getModel().setPressed(false);
     		break;
     	case 15:
-    		seat15Button.setSelected(!seat15Button.isSelected());
+    		seat15Button.getModel().setPressed(false);
     		break;
     	case 16:
-    		seat16Button.setSelected(!seat16Button.isSelected());
+    		seat16Button.getModel().setPressed(false);
     		break;
     	case 17:
-    		seat17Button.setSelected(!seat17Button.isSelected());
+    		seat17Button.getModel().setPressed(false);
     		break;
     	case 18:
-    		seat18Button.setSelected(!seat18Button.isSelected());
+    		seat18Button.getModel().setPressed(false);
     		break;
     	case 19:
-    		seat19Button.setSelected(!seat19Button.isSelected());
+    		seat19Button.getModel().setPressed(false);
     		break;
     	default:
-    		seat20Button.setSelected(!seat20Button.isSelected());
+    		seat20Button.getModel().setPressed(false);
     	}
     }
     
