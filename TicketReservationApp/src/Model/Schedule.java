@@ -78,7 +78,7 @@ public class Schedule {
 
 
 	public String getMovieName() {
-		return movieName.getMovieDirector();
+		return movieName.getMovieName();
 	}
 
 	public SeatReservation searchSeat(int i) {
