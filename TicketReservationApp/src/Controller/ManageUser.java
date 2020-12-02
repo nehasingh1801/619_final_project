@@ -125,13 +125,14 @@ public class ManageUser {
 
     class payAnnualFeeListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            memberPortal.displayMessage("Payment received. Thank you!");
+            RegisteredUser user = regList.searchUser(loginView.getUserField());
+            memberPortal.displayMessage(user.payUserFee());
         }
     }
 
     class getMovieNewsListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
-            memberPortal.displayMessage("No movie news to display currently.");
+            memberPortal.displayMessage("The Batman Out March 4, 2022!");
         }
     }
 
