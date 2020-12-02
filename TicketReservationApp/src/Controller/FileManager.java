@@ -218,14 +218,21 @@ public class FileManager {
 			SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
 			while (myReader.hasNextLine()) {
 				String data = myReader.nextLine();
-				String[] splitData = data.split(";",3);
+				String[] splitData = data.split(";",2);
 				
 				PaymentReceipt s;
-				s = new PaymentReceipt();
-				pymtRcpt.add(s);
+				try {
+					s = new PaymentReceipt(Integer.parseInt(splitData[0]), sdf.parse(splitData[1]));
+					pymtRcpt.add(s);
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				
-
 			}
 			myReader.close();
 		} catch (FileNotFoundException e) {

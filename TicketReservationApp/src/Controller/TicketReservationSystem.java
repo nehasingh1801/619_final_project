@@ -69,6 +69,7 @@ public class TicketReservationSystem {
 		String scheduleFileName = "schedule.txt";
 		String filename = "registereduserlist.txt";
 		String voucherFileName = "vouchers.txt";
+		String receiptfile = "receipts.txt";
 		
 		TicketReservationSystem system = new TicketReservationSystem(movieFileName
 				, theaterFileName, scheduleFileName, filename, voucherFileName);
@@ -91,7 +92,10 @@ public class TicketReservationSystem {
 		regUSerList.loadRegisteredUserRepo(filename);
 		
 		VoucherList voucherList = new VoucherList();
-		voucherList.loadVoucherRepo(filename);
+		voucherList.loadVoucherRepo(voucherFileName);
+		
+		PaymentReceiptList pymtRcptList = new PaymentReceiptList();
+		pymtRcptList.loadReceiptRepo(receiptfile);
 		
 		
 
@@ -105,7 +109,7 @@ public class TicketReservationSystem {
 		ManagePurchase managePurchase = new ManagePurchase(trans, voucherList);
 		ManageUser manageUser = new ManageUser(login, user, meberPortalView, search, regUSerList, managePurchase);
 		SearchEngine searchEngine = new SearchEngine(seats, search, trans, offeringList);
-		ManageCancellation cancellationController = new ManageCancellation(search, managePurchase, regUSerList);
+		ManageCancellation cancellationController = new ManageCancellation(search, managePurchase, regUSerList, pymtRcptList);
 
 		login.displayGUI();
 	**/
