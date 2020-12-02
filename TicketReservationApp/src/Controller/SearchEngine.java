@@ -14,6 +14,7 @@ public class SearchEngine {
     private TransactionGUI transactionGUI;
     //private TheaterList theaterList;
     private OfferingList offeringList;
+    private User user;
 
     public SearchEngine(SeatMapGUI seatMap, SearchGUI searchView, TransactionGUI transactionGUI,
                         OfferingList offeringList) {
@@ -185,6 +186,10 @@ public class SearchEngine {
         		seatMap.setWarning("You must select at least one vacant seat.");
         		return;
         	}
+        	if((user instanceof RegisteredUser) && seatMap.getSchedule().registeredRate() > 0.1) {
+        		seatMap.setWarning("No more available seats for registered customer.");
+        		return;
+        	}  		
             seatMap.setState(Frame.ICONIFIED); 
             transactionGUI.setSeatReminder();
             transactionGUI.displayGUI();
@@ -201,7 +206,16 @@ public class SearchEngine {
 
     }
 
-    class theaterComboBoxListener implements ActionListener {
+    public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	class theaterComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String theaterName = searchView.getTheaterComboBoxItem();
             searchView.addMoviesToComboBox(offeringList.listMovieNames(theaterName));

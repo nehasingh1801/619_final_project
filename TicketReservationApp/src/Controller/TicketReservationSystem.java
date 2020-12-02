@@ -38,8 +38,8 @@ public class TicketReservationSystem {
 		voucherList.loadVoucherRepo(voucherFileName);
 		pymtRcptList.loadReceiptRepo(receiptfile);
 		managePurchase = new ManagePurchase(trans, voucherList);
-		manageUser = new ManageUser(login, user, meberPortalView, search, userList, managePurchase);
 		searchEngine = new SearchEngine(seats, search, trans, scheduleList);
+		manageUser = new ManageUser(login, user, searchEngine, meberPortalView, search, userList, managePurchase);
 		cancellationController = new ManageCancellation(search, managePurchase, userList, pymtRcptList);
 	}
 	

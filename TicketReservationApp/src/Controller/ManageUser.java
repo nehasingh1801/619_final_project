@@ -16,11 +16,13 @@ public class ManageUser {
     private SearchGUI searchGUI;
     private MemberPortal memberPortal;
     private ManagePurchase purchaseController;
+    private SearchEngine searchController;
     private RegisteredUserList regList;
 
-    public ManageUser(LoginGUI loginView, UserInfoGUI userView, MemberPortal memberPortal, SearchGUI searchGUI, RegisteredUserList regList, ManagePurchase purchaseController) {
+    public ManageUser(LoginGUI loginView, UserInfoGUI userView, SearchEngine searchView, MemberPortal memberPortal, SearchGUI searchGUI, RegisteredUserList regList, ManagePurchase purchaseController) {
         this.loginView = loginView;
         this.userView = userView;
+        this.searchController = searchView;
         this.memberPortal = memberPortal;
         this.searchGUI = searchGUI;
         this.regList = regList;
@@ -52,6 +54,7 @@ public class ManageUser {
                 if (regList.validateLogin(loginView.getUserField(), loginView.getPasswordField())) {
                 	RegisteredUser user = regList.searchUser(loginView.getUserField());
                 	purchaseController.setUser(user);
+                	purchaseController.setUser(user);
                     loginView.setState(Frame.ICONIFIED);
                     memberPortal.displayGUI();
                 }
@@ -75,7 +78,9 @@ public class ManageUser {
     class guestButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             //TODO: display searchGUI as an ordinary user
-        	purchaseController.setUser(new User());
+        	User guest = new User();
+        	searchController.setUser(guest);
+        	purchaseController.setUser(guest);
             loginView.setState(Frame.ICONIFIED);
             searchGUI.displayGUI();
         }

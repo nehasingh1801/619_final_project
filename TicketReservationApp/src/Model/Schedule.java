@@ -35,6 +35,16 @@ public class Schedule {
 			seatReservation.add(new SeatReservation(s));
 	}
 	
+	private int registeredCount() {
+		int i = 0;
+		for(SeatReservation s : seatReservation)
+			if(s.getBookingStatus().toLowerCase().contentEquals("registered")) i++;
+		return i;
+	}
+	
+	public double registeredRate() {
+		return (double)this.registeredCount()/seatReservation.size();
+	}
 	
 	public Schedule() {
 		// TODO Auto-generated constructor stub
